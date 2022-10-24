@@ -6,10 +6,10 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AccountCircle } from '@mui/icons-material';
-import { Button, Menu, MenuItem } from '@mui/material';
+
+import {Menu, MenuItem } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import useAuthContext from '../../../others/useAuthContext';
+
 
 
 const toggleHeaderVisibility = () => {
@@ -24,7 +24,7 @@ function changeHeaderOnScroll() {
 }
 
 const Navbar = () => {
-    const { user, logOut } = useAuthContext();
+  
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const handleMenu = (event) => {
@@ -69,16 +69,7 @@ const Navbar = () => {
                             onClick={toggleHeaderVisibility}>
                             <Typography variant="h6">Contact</Typography>
                         </NavLink>
-                        {user && <NavLink to="/dashboard" activeClassName="active"
-                            onClick={toggleHeaderVisibility}>
-                            <Typography variant="h6">Dashboard</Typography>
-                        </NavLink>}
-
-                        {!user ?
-                            <NavLink to="/auth/login">
-                                <Button variant="contained"
-                                    onClick={toggleHeaderVisibility}>Login</Button>
-                            </NavLink> :
+                        
                             <div>
                                 <IconButton
                                     aria-label="account of current user"
@@ -87,10 +78,10 @@ const Navbar = () => {
                                     onClick={handleMenu}
                                     sx={{ padding: '5px', margin: 0 }}
                                 >
-                                    {!user.photoURL ? <AccountCircle color="primary" fontSize="large" /> :
+                                    
                                         <Box sx={{ width: '30px', height: '30px', background: '#ff000055', borderRadius: '50%', overflow: 'hidden' }}>
-                                            <img src={user.photoURL} alt="" style={{ width: '100%' }} />
-                                        </Box>}
+                                            <img src='https' alt="" style={{ width: '100%' }} />
+                                        </Box>
                                 </IconButton>
                                 <Menu
                                     id="menu-appbar"
@@ -114,11 +105,10 @@ const Navbar = () => {
                                         >Profile
                                         </MenuItem>
                                     </NavLink>
-                                    <MenuItem sx={{ px: 4 }}
-                                        onClick={() => { handleClose(); logOut() }}>Logout</MenuItem>
+                                    
                                 </Menu>
                             </div>
-                        }
+                        
                     </Box>
                 </Toolbar>
             </AppBar>

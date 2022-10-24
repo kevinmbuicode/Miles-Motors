@@ -3,20 +3,16 @@ import { Box, styled } from "@mui/system";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Common/Navbar/Navbar";
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import AuthContextProvider from "./contexts/AuthContext";
-import Authentication from "./pages/Authentication";
+
 import Cars from "./pages/Cars";
 import Home from "./pages/Home";
-import UserProfile from "./pages/UserProfile";
+
 import CarDetails from "./pages/CarDetails";
 import Page404 from "./pages/404";
-import Dashboard from "./pages/Dashboard";
+
 import Footer from "./components/Common/Footer/Footer";
-import Contact from "./pages/Contact";
-import Login from "./components/Auth/Login/Login";
-import SignUp from "./components/Auth/SignUp/SignUp";
-import useFirebase from "./hooks/useFirebase";
+
+
 import LoadingSpinner from "./components/Common/LoadingSpinner/LoadingSpinner";
 
 // customize mui theme
@@ -62,18 +58,18 @@ export const PageHeading = styled('div')(({ theme }) => ({
 }));
 
 function App() {
-  const firebaseFunctions = useFirebase()
+
 
   return (
     // customized theme provider
     <ThemeProvider theme={theme}>
       <Backdrop sx={{
         zIndex: 9999, backgroundColor: 'white'
-      }} open={firebaseFunctions.loadingUserOnReload}
+      }} open={false}
         transitionDuration={{ appear: 0, enter: 0, exit: 1000 }}>
         <LoadingSpinner />
       </Backdrop>
-      <AuthContextProvider firebaseFunctions={firebaseFunctions}> {/* authentication context provider */}
+
         <Router>
           <Box className="App" sx={{ position: 'relative' }}>
             <Navbar />   {/* navigation bar */}
@@ -83,16 +79,13 @@ function App() {
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/cars"><Cars /></Route>
 
-                {/* authentication routes */}
-                <Route exact path="/auth"><Authentication /></Route>
-                <Route path="/auth/signup"><Authentication><SignUp /></Authentication></Route>
-                <Route path="/auth/login"><Authentication><Login /></Authentication></Route>
+         
 
                 {/* private routes */}
-                <PrivateRoute path="/profile"><UserProfile /></PrivateRoute>
-                <PrivateRoute path="/cars/details/:carID"><CarDetails /></PrivateRoute>
-                <PrivateRoute path="/dashboard"><Dashboard /></PrivateRoute>
-                <PrivateRoute path="/contact"><Contact /></PrivateRoute>
+          
+                <Route path="/cars/details/:carID"><CarDetails /></Route>
+            
+             
 
                 {/* not found page */}
                 <Route path="*"><Page404 /></Route>
@@ -101,7 +94,7 @@ function App() {
             <Footer />
           </Box>
         </Router>
-      </AuthContextProvider>
+      
     </ThemeProvider>
   );
 }
