@@ -118,7 +118,7 @@ const HomeBanner = () => {
                 <Typography variant="h6" sx={{
                     fontWeight: 'bold', textShadow: '0 0 10px black',
                     px: 8, py: 1, fontSize: '15px'
-                }}>Welcome to Cars Zone</Typography>
+                }}>Welcome to Miles Motors</Typography>
             </Paper>
             <Box sx={{
                 background: 'linear-gradient(#00000000, #000000cc)', pt: 8,
