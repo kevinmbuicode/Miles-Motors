@@ -45,7 +45,8 @@ const Navbar = () => {
                 }}>
                     <NavLink to="/">
                         <Box id='header-logo'>
-                            <img src="/images/logo.png" alt="" style={{ width: '100%' }} />
+                            <Box component="img" src="/images/logo.jpg" sx={{ width: '200px' }} />
+                            {/* <img src="/images/logo.jpg" alt="" style={{ width: '100%',height:'50px' }} /> */}
                         </Box>
                     </NavLink>
                     <Box id="header-menu-toggler">

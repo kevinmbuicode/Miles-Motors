@@ -10,7 +10,7 @@ const Footer = () => {
                 <Box sx={{
                     display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'
                 }}>
-                    <Box component="img" src="/images/logo.png" sx={{ width: '200px' }} />
+                    <Box component="img" src="/images/logo.jpg" sx={{ width: '200px' }} />
                     <Box sx={{
                         display: 'flex', alignItems: 'flex-end',
                         my: 2, '&>a': {
@@ -24,9 +24,9 @@ const Footer = () => {
                         <Box component='a' href="https://twitter.com/TecAgecompanies" target="_blank">
                             <Twitter color="primary" />
                         </Box>
-                        <Box component="a" href="tel:+254713322025">
+                        <Box component="a" href="tel:+254733381707">
                             <PhoneRounded sx={{ mx: 1 }} />
-                            (+2547) 7133-22025
+                            (+254) 733 381 707
                         </Box>
                     </Box>
                 </Box>
