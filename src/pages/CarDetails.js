@@ -90,7 +90,7 @@ const CarDetails = () => {
                                 ))}
                                 <TableRow sx={{ '& *': { fontSize: '25px', fontWeight: 'bold' } }}>
                                     <TableCell>Price</TableCell>
-                                    <TableCell align="right">${price}</TableCell>
+                                    <TableCell align="right">Ksh{price}</TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>

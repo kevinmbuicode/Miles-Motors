@@ -53,7 +53,7 @@ const SingleCar = ({ carInfo }) => {
                         <Typography variant="h5"
                             sx={{ fontWeight: 'bold', textTransform: 'capitalize' }}
                         >{carName}</Typography>
-                        <CarPrice>${price}</CarPrice>
+                        <CarPrice>Kes{price}</CarPrice>
                     </Box>
                     <Box sx={{
                         display: 'flex', flexWrap: 'wrap',

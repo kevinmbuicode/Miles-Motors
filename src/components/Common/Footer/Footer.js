@@ -10,7 +10,7 @@ const Footer = () => {
                 <Box sx={{
                     display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'
                 }}>
-                    <Box component="img" src="/images/logo.png" sx={{ width: '200px' }} />
+                    <Box component="img" src="/images/logo.jpg" sx={{ width: '200px' }} />
                     <Box sx={{
                         display: 'flex', alignItems: 'flex-end',
                         my: 2, '&>a': {
@@ -18,15 +18,15 @@ const Footer = () => {
                             display: 'flex', alignItems: 'flex-end'
                         }
                     }}>
-                        <Box component='a' href="https://facebook.com/srtamim21" target="_blank">
+                        <Box component='a' href="https://facebook.com/" target="_blank">
                             <FacebookRounded color="primary" />
                         </Box>
-                        <Box component='a' href="https://twitter.com/SR__Tamim" target="_blank">
+                        <Box component='a' href="https://twitter.com/TecAgecompanies" target="_blank">
                             <Twitter color="primary" />
                         </Box>
-                        <Box component="a" href="tel:+88012341256">
+                        <Box component="a" href="tel:+254733381707">
                             <PhoneRounded sx={{ mx: 1 }} />
-                            (+880) 1234-1256
+                            (+254) 733 381 707
                         </Box>
                     </Box>
                 </Box>
@@ -62,7 +62,7 @@ const Footer = () => {
                         '& > a': { color: '#000000bb' }
                     }}>
                         <Typography variant='h6'>About</Typography>
-                        <Link href="#">About Cars Zone</Link>
+                        <Link href="#">About miles Motors</Link>
                         <Link href="#">Investor relations</Link>
                         <Link href="#">Terms & conditions</Link>
                         <Link href="#">Privacy policy</Link>
@@ -82,10 +82,10 @@ const Footer = () => {
                     }}>
                         <Typography variant='h6'>Copyright</Typography>
                         <Typography variant="p">
-                            Copyright © 2021 <br />
+                            Copyright © 2022 <br />
                             All rights reserved <br />
                             Programmed, developed & designed by <br />
-                            <Link href="https://sr-tamim.vercel.app" color="primary" fontWeight="bold" target="_blank">SR TAMIM</Link>
+                            <Link href="https://techagecompanies.space" color="primary" fontWeight="bold" target="_blank">TechAgeCompanies</Link>
                         </Typography>
                     </Grid>
                 </Grid>
