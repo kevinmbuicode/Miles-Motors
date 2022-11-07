@@ -6,7 +6,7 @@ import CarsSection from '../components/CarsSection/CarsSection';
 import WhyUsSection from '../components/Homepage/WhyUsSection';
 import HomeBanner from '../components/Homepage/HomeBanner';
 import ReviewSection from '../components/Homepage/ReviewSection';
-
+import SocialFlow from "../components/Common/socialFlow/socialFlow"
 const Home = () => {
     return (
         <div>
@@ -19,7 +19,7 @@ const Home = () => {
             <section style={{ padding: '100px 0 50px' }}>
                 <WhyUsSection />
             </section>
-            <section>
+            <sction>
                 <CarsSection dataAmount={6} />
                 <Box sx={{ textAlign: 'center', my: 6 }}>
                     <NavLink to="/cars"
@@ -31,7 +31,9 @@ const Home = () => {
                             }}
                         >View More</Button></NavLink>
                 </Box>
-            </section>
+                <SocialFlow/>
+            </sction>
+
             <Box sx={{ background: 'url(/images/homepage/review-back.jpg) no-repeat fixed center center', backgroundSize: 'cover' }}>
                 <ReviewSection />
             </Box>

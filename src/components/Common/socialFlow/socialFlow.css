@@ -1,0 +1,24 @@
+
+a.social {
+    margin:20rem 1rem;
+    transition: transform 250ms;
+    display:flex;
+    position: fixed;
+  }
+  
+  a.social:hover {
+    transform: translateY(-2px);
+  }
+  
+  
+  
+  a.facebook {
+    color: #4968ad;
+  }
+  
+  a.twitter {
+    color: #49a1eb;
+  }
+  a.whatsapp{
+    color:green;
+  }

@@ -79,7 +79,7 @@ function App() {
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/cars"><Cars /></Route>
 
-         
+                 
 
                 {/* private routes */}
           
