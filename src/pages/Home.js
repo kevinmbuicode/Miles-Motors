@@ -16,9 +16,6 @@ const Home = () => {
             </Box>
 
             {/* offers section */}
-            <section style={{ padding: '100px 0 50px' }}>
-                <WhyUsSection />
-            </section>
             <section>
                 <CarsSection dataAmount={6} />
                 <Box sx={{ textAlign: 'center', my: 6 }}>
@@ -32,7 +29,7 @@ const Home = () => {
                         >View More</Button></NavLink>
                 </Box>
                
-            </sction>
+            </section>
 
             <Box sx={{ background: 'url(/images/homepage/review-back.jpg) no-repeat fixed center center', backgroundSize: 'cover' }}>
                 <ReviewSection />
