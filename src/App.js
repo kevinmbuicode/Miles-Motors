@@ -11,7 +11,7 @@ import CarDetails from "./pages/CarDetails";
 import Page404 from "./pages/404";
 
 import Footer from "./components/Common/Footer/Footer";
-
+import SocialFlow from "./components/Common/socialFlow/socialFlow";
 
 import LoadingSpinner from "./components/Common/LoadingSpinner/LoadingSpinner";
 
@@ -79,7 +79,7 @@ function App() {
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/cars"><Cars /></Route>
 
-         
+                 
 
                 {/* private routes */}
           
@@ -91,6 +91,7 @@ function App() {
                 <Route path="*"><Page404 /></Route>
               </Switch>
             </Box>
+            <SocialFlow/>
             <Footer />
           </Box>
         </Router>
