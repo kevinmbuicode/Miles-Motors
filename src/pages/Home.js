@@ -15,6 +15,8 @@ const Home = () => {
                 <HomeBanner />
             </Box>
 
+        
+        
             {/* offers section */}
             <section>
                 <CarsSection dataAmount={6} />
