@@ -17,7 +17,7 @@ const Home = () => {
 
         
         
-            <sction>
+            <section>
                 <CarsSection dataAmount={6} />
                 <Box sx={{ textAlign: 'center', my: 6 }}>
                     <NavLink to="/cars"
@@ -30,7 +30,7 @@ const Home = () => {
                         >View More</Button></NavLink>
                 </Box>
                
-            </sction>
+            </section>
 
             <Box sx={{ background: 'url(/images/homepage/review-back.jpg) no-repeat fixed center center', backgroundSize: 'cover' }}>
                 <ReviewSection />
