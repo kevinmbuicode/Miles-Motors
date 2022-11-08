@@ -8,11 +8,22 @@ import SingleCar from './SingleCar/SingleCar';
 const CarsSection = ({ dataAmount }) => {
     const [cars, setCars] = useState(null);
 
+    const FetchCars = async () => {
+        const {data} =  await axios.get(`https://milesmotors.herokuapp.com/cars/${dataAmount ? dataAmount : 'all'}`)
+        setCars(data)
+        console.log("dataNumber", data)
+    }
+
     useEffect(() => {
-        axios.get(`https://cars-zone-server.netlify.app/.netlify/functions/server/cars/${dataAmount ? dataAmount : 'all'}`)
-            .then(({ data }) => setCars(data))
-            .catch(err => console.log(err));
+        FetchCars()   
     }, [dataAmount])
+
+    // Original Copy
+    // useEffect(() => {
+    //     axios.get(`https://milesmotors.herokuapp.com/cars/${dataAmount ? dataAmount : 'all'}`)
+    //         .then(({ data }) => setCars(data))
+    //         .catch(err => console.log(err));
+    // }, [dataAmount])
 
 
     return (!cars ? <LoadingSpinner style={{ padding: '100px 0' }} /> :
