@@ -7,10 +7,7 @@ header {
     color:black;
     margin-right: 200px;
     font-size: 0.75em;
-    display:flex;
-    flex-direction: column;
-    flex-wrap:wrap;
-    display: hide;
+   
 }
 .location{ 
     color:red;

@@ -1,80 +1,46 @@
-import { Box } from '@mui/system';
-import { Button, Container, FormHelperText, TextField, Typography } from '@mui/material';
-import axios from 'axios';
-import React, { useState } from 'react';
-import useAuthContext from '../others/useAuthContext';
-
+import React from "react";
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 const Contact = () => {
-    const { user } = useAuthContext();
-    const [values, setValues] = React.useState({
-        message: '', name: user.displayName
-    });
-
-    const handleChange = (prop) => (event) => {
-        setValues({
-            ...values, [prop]: event.target.value
-        });
+  const [formStatus, setFormStatus] = React.useState("Send");
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setFormStatus("Submitting...");
+    const { name, email, message } = e.target.elements;
+    let conFom = {
+      name: name.value,
+      email: email.value,
+      message: message.value,
     };
-
-    const [submissionStatus, setSubmissionStatus] = useState(null);
-    const handleSubmit = (event) => {
-        setSubmissionStatus(null);
-        const { email } = user;
-        const date = Date.now();
-        const newMessage = { ...values, email, date };
-        axios.post('https://cars-zone-server.netlify.app/.netlify/functions/server/contact', newMessage)
-            .then(({ data }) => {
-                if (data.insertedId) {
-                    setSubmissionStatus({ success: 'Message sent successfully' })
-                    setValues({ message: '', name: '' })
-                    event.target.reset()
-                } else {
-                    setSubmissionStatus({ error: 'Error sending message' })
-                }
-            })
-            .catch(err => console.log(err));
-        event.preventDefault();
-    }
-    return (
-        <Box>
-            <Typography variant="h4" align="center" color="primary" fontWeight="bold">Contact Us</Typography>
-            <Container maxWidth='sm' sx={{ my: 4 }}>
-                <form onSubmit={handleSubmit}>
-                    <TextField
-                        label="Name" variant="standard"
-                        fullWidth type="text" autoComplete="cc-name"
-                        value={values.name}
-                        onChange={handleChange('name')}
-                    />
-                    <TextField
-                        label="Email" variant="standard"
-                        fullWidth aria-readonly
-                        value={user.email}
-                        type="email" sx={{ my: 3 }}
-                    />
-                    <TextField
-                        label="Write Your Message"
-                        multiline fullWidth
-                        rows={5} required
-                        value={values.message}
-                        onChange={handleChange('message')}
-                    />
-
-                    <Box sx={{
-                        textTransform: 'capitalize',
-                        display: 'flex', justifyContent: 'flex-end',
-                        alignItems: 'center', my: 4
-                    }}>
-                        <FormHelperText sx={{ color: 'red' }}>{submissionStatus?.error}</FormHelperText>
-                        <FormHelperText sx={{ color: 'green' }}>{submissionStatus?.success}</FormHelperText>
-                        <Button variant="contained" size="large" color="primary" type="submit" sx={{ ml: 3 }}>Send
-                        </Button>
-                    </Box>
-
-                </form>
-            </Container>
-        </Box>
-    );
+    console.log(conFom);
+  };
+  return (
+    <div className="container mt-5">
+      <h2 className="mb-3">CONTACT US</h2>
+        <h4 className="mb-3">Got any question?Send us a message below</h4>
+          <form onSubmit={onSubmit}>
+            <div className="mb-3">
+               <label className="form-label" htmlFor="name">
+                 Name
+             </label>
+              <input className="form-control" type="text" id="name" required />
+        </div>
+        <div className="mb-3">
+             <label className="form-label" htmlFor="email">
+                Email
+             </label>
+             <input className="form-control" type="email" id="email" required />
+        </div>
+        <div className="mb-3">
+            <label className="form-label" htmlFor="message">
+               Message
+           </label>
+            <textarea className="form-control" id="message" required />
+        </div>
+        <button className="btn btn-danger" type="submit">
+            {formStatus}
+        </button>
+      </form>
+    </div>
+  );
 };
-
 export default Contact;

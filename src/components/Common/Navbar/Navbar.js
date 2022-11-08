@@ -56,7 +56,7 @@ const Navbar = () => {
             </Box>
                     <NavLink to="/">
                         <Box id='header-logo'>
-                            <Box component="img" src="/images/logo.jpg" sx={{ width: '200px' }} />
+                            <Box component="img" src="/images/logo.jpeg" sx={{ width: '200px' }} />
                             {/* <img src="/images/logo.jpg" alt="" style={{ width: '100%',height:'50px' }} /> */}
                         </Box>
                     </NavLink>

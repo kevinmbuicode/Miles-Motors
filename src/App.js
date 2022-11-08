@@ -15,6 +15,7 @@ import SocialFlow from "./components/Common/socialFlow/socialFlow";
 
 import LoadingSpinner from "./components/Common/LoadingSpinner/LoadingSpinner";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 // customize mui theme
 export const theme = createTheme({
@@ -80,6 +81,7 @@ function App() {
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/cars"><Cars /></Route>
                 <Route exact path="/about"><About /></Route>
+                <Route exact path="/contact"><Contact/></Route>
 
                  
 
