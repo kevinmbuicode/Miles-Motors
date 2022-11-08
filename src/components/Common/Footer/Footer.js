@@ -18,10 +18,10 @@ const Footer = () => {
                             display: 'flex', alignItems: 'flex-end'
                         }
                     }}>
-                        <Box component='a' href="https://facebook.com/" target="_blank">
+                        <Box component='a' href="https://facebook.com/MillesMotorsLtd" target="_blank">
                             <FacebookRounded color="primary" />
                         </Box>
-                        <Box component='a' href="https://twitter.com/TecAgecompanies" target="_blank">
+                        <Box component='a' href="https://twitter.com/@miles_motors" target="_blank">
                             <Twitter color="primary" />
                         </Box>
                         <Box component="a" href="tel:+254733381707">
