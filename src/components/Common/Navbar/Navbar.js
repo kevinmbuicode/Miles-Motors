@@ -9,6 +9,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import {Menu, MenuItem } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faLocationDot} from "@fortawesome/free-solid-svg-icons"
+
+
 
 
 
@@ -43,6 +47,13 @@ const Navbar = () => {
                 <Toolbar sx={{
                     width: '100%', maxWidth: '1400px', margin: 'auto',
                 }}>
+
+            <Box id="header-location">
+                <p> located upperhill <p>behind Kenya National library </p><p>on chyulu road</p>Nariobi</p>
+                 <a href="https://googlemaps.com">
+                      <FontAwesomeIcon icon={faLocationDot} className="location" />
+                 </a>
+            </Box>
                     <NavLink to="/">
                         <Box id='header-logo'>
                             <Box component="img" src="/images/logo.jpg" sx={{ width: '200px' }} />
