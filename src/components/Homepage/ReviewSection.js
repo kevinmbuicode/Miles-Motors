@@ -48,10 +48,17 @@ const ReviewSection = () => {
     };
 
     React.useEffect(() => {
-        axios.get('https://cars-zone-server.netlify.app/.netlify/functions/server/review')
-            .then(({ data }) => setReviews(data))
+        axios.get(`https://milesmotors.herokuapp.com/cars/9`)
+            .then((data ) => setReviews(data))
             .catch(err => console.log(err))
     }, [])
+
+    //Original
+    // React.useEffect(() => {
+    //     axios.get('https://cars-zone-server.netlify.app/.netlify/functions/server/review')
+    //         .then(({ data }) => setReviews(data))
+    //         .catch(err => console.log(err))
+    // }, [])
 
     return (reviews &&
         <Box sx={{ display: 'flex', justifyContent: 'center', background: '#00000077', py: 10 }}>
