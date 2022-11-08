@@ -49,7 +49,7 @@ const Navbar = () => {
                 }}>
 
             <Box id="header-location">
-                <p> located upperhill <p>behind Kenya National library </p><p>on chyulu road</p>Nar iobi</p>
+                <p>Location</p>
                  <a href="https://googlemaps.com" target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon icon={faLocationDot} className="location" />
                  </a>
