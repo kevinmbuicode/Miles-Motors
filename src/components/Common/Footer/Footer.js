@@ -18,10 +18,10 @@ const Footer = () => {
                             display: 'flex', alignItems: 'flex-end'
                         }
                     }}>
-                        <Box component='a' href="https://facebook.com/MillesMotorsLtd" target="_blank">
+                        <Box component='a' href="https://facebook.com/MillesMotorsLtd" target="_blank" rel="noopener noreferrer">
                             <FacebookRounded color="primary" />
                         </Box>
-                        <Box component='a' href="https://twitter.com/@miles_motors" target="_blank">
+                        <Box component='a' href="https://twitter.com/@miles_motors" target="_blank" rel="noopener noreferrer">
                             <Twitter color="primary" />
                         </Box>
                         <Box component="a" href="tel:+254733381707">
@@ -85,7 +85,7 @@ const Footer = () => {
                             Copyright © 2022 <br />
                             All rights reserved <br />
                             Programmed, developed & designed by <br />
-                            <Link href="https://techagecompanies.space" color="primary" fontWeight="bold" target="_blank">TechAgeCompanies</Link>
+                            <Link href="https://techagecompanies.space" color="primary" fontWeight="bold" target="_blank" rel="noopener noreferrer">TechAgeCompanies</Link>
                         </Typography>
                     </Grid>
                 </Grid>
