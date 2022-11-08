@@ -14,6 +14,7 @@ import Footer from "./components/Common/Footer/Footer";
 
 
 import LoadingSpinner from "./components/Common/LoadingSpinner/LoadingSpinner";
+import About from "./pages/About";
 
 // customize mui theme
 export const theme = createTheme({
@@ -78,6 +79,7 @@ function App() {
                 {/* routes */}
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/cars"><Cars /></Route>
+                <Route exact path="/about"><About /></Route>
 
          
 

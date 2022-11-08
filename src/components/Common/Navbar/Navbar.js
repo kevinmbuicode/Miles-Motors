@@ -66,6 +66,10 @@ const Navbar = () => {
                             onClick={toggleHeaderVisibility}>
                             <Typography variant="h6">Explore</Typography>
                         </NavLink>
+                        <NavLink to="/about" activeClassName="active"
+                            onClick={toggleHeaderVisibility}>
+                            <Typography variant="h6">About</Typography>
+                        </NavLink>
                         <NavLink to="/contact" activeClassName="active"
                             onClick={toggleHeaderVisibility}>
                             <Typography variant="h6">Contact</Typography>
