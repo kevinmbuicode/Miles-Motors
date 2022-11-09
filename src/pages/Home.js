@@ -5,7 +5,8 @@ import { NavLink } from 'react-router-dom';
 import CarsSection from '../components/CarsSection/CarsSection';
 
 import HomeBanner from '../components/Homepage/HomeBanner';
-import ReviewSection from '../components/Homepage/ReviewSection';
+//Disabled reviews
+// import ReviewSection from '../components/Homepage/ReviewSection';
 
 const Home = () => {
     return (
@@ -34,7 +35,7 @@ const Home = () => {
             </section>
 
             <Box sx={{ background: 'url(/images/homepage/review-back.jpg) no-repeat fixed center center', backgroundSize: 'cover' }}>
-                <ReviewSection />
+                {/* <ReviewSection /> */}
             </Box>
         </div>
     );
