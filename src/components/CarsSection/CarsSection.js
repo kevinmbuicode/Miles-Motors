@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import LoadingSpinner from '../Common/LoadingSpinner/LoadingSpinner';
 import SingleCar from './SingleCar/SingleCar';
 
+
 const CarsSection = ({ dataAmount }) => {
     const [cars, setCars] = useState(null);
 
@@ -17,13 +18,6 @@ const CarsSection = ({ dataAmount }) => {
     useEffect(() => {
         FetchCars()   
     }, [dataAmount])
-
-    // Original Copy
-    // useEffect(() => {
-    //     axios.get(`https://milesmotors.herokuapp.com/cars/${dataAmount ? dataAmount : 'all'}`)
-    //         .then(({ data }) => setCars(data))
-    //         .catch(err => console.log(err));
-    // }, [dataAmount])
 
 
     return (!cars ? <LoadingSpinner style={{ padding: '100px 0' }} /> :
