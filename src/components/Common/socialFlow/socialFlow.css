@@ -9,7 +9,7 @@
 body{
   height: 100vh;
 }
-nav{
+.flow{
   position: fixed;
   width: 60px;
   font-family: 'Ubuntu',sans-serif;
@@ -20,19 +20,19 @@ nav{
   
 }
 
-nav ul {
+.flow ul {
   margin-top: 0;
   margin-bottom: 0rem;
 }
-nav li{
+.flow li{
   height: 45px;
   position:relative;
 }
-.icon{
+#icons{
   padding-bottom:20px;
   size: 5px;
 }
-nav li a{
+.flow ul li a{
   color: #fff !important;
   display: block;
   height: 100%;
@@ -43,19 +43,19 @@ nav li a{
   transition: all .3s linear;
   text-decoration: none !important;
 }
-nav li:nth-child(1) a{
+.flow li:nth-child(1) a{
   background: #4267B2;
 }
-nav li:nth-child(2) a{
+.flow li:nth-child(2) a{
   background: #1DA1F2;
 }
 
-nav li:nth-child(3) a{
+.flow li:nth-child(3) a{
   background: #075e54;
 }
 
-nav li a i{
-      position: absolute;
+.flow ul li a i{
+    position: absolute;
     top: 14px;
     left: 24px;
     font-size: 15px;
@@ -66,7 +66,7 @@ ul li a span{
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-nav ul li a:hover {
+.flow ul li a:hover {
   z-index:1;
   width: 200px;
   border-bottom: 1px solid rgba(0,0,0,.5);

@@ -55,14 +55,14 @@ header {
     z-index: 1001;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 930px) {
     #header>div {
         flex-wrap: wrap;
     }
    
 
     #header-location {
-        flex-wrap: wrap;
+        
         display: none;
         visibility: collapse;
     

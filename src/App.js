@@ -17,6 +17,8 @@ import LoadingSpinner from "./components/Common/LoadingSpinner/LoadingSpinner";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 // customize mui theme
 export const theme = createTheme({
   palette: {

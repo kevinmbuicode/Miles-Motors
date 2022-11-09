@@ -49,7 +49,7 @@ const Navbar = () => {
                 }}>
 
             <Box id="header-location">
-                <p> located upperhill <p>behind Kenya National library </p><p>on chyulu road</p>Nar iobi</p>
+                {/* <p> located upperhill <p>behind Kenya National library </p><p>on chyulu road</p>Nairobi</p> */}
                  <a href="https://googlemaps.com" target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon icon={faLocationDot} className="location" />
                  </a>
@@ -57,7 +57,7 @@ const Navbar = () => {
                     <NavLink to="/">
                         <Box id='header-logo'>
                             <Box component="img" src="/images/logo.jpeg" sx={{ width: '200px' }} />
-                            {/* <img src="/images/logo.jpg" alt="" style={{ width: '100%',height:'50px' }} /> */}
+                            
                         </Box>
                     </NavLink>
                     <Box id="header-menu-toggler">

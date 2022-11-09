@@ -9,12 +9,12 @@ import {
 
 export default function SocialFlow() {
   return (
-    <nav>
+    <nav className="flow">
       <ul>
         <li>
-          <a href="https://facebook.com/MillesMotorsLtd" target="_blank"    rel="noopener noreferrer">
+          <a href="https://facebook.com/MillesMotorsLtd" target="_blank"     rel="noopener noreferrer">
             <i>
-              <FontAwesomeIcon  icon= {faFacebook} className="icon"/ >
+              <FontAwesomeIcon  icon= {faFacebook} id="icons"/ >
 
             </i>
                 <span>Facebook</span>
@@ -24,7 +24,7 @@ export default function SocialFlow() {
           
           <a href="https://twitter.com/@miles_motors" target="_blank" rel="noopener noreferrer">
             <i>
-            <FontAwesomeIcon icon={faTwitter} className="icon"/>
+            <FontAwesomeIcon icon={faTwitter} id="icons"/>
             </i>
             <span>Twitter</span>
           </a>
@@ -32,7 +32,7 @@ export default function SocialFlow() {
         <li>
           <a href="https://wa.me//+254733381707" target="_blank" rel="noopener noreferrer">
             <i>
-            <FontAwesomeIcon icon={faWhatsapp} className="icon"/>
+            <FontAwesomeIcon icon={faWhatsapp} id="icons"/>
         
             </i>
             <span>whatsapp</span>
