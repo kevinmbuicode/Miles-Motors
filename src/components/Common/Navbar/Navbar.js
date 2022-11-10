@@ -25,32 +25,12 @@ function changeHeaderOnScroll() {
 }
 
 const Navbar = () => {
-    const [category, setCategory] = useState("Search")
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const categories = [
-    {
-      value: "USD",
-      label: "All",
-    },
-    {
-      value: "EUR",
-      label: "Mazda",
-    },
-    {
-      value: "BTC",
-      label: "Toyota",
-    },
-  ];
-
-  const handleChange = (event) => {
-    setCategory(event.target.value);
   };
 
   return (
@@ -73,44 +53,19 @@ const Navbar = () => {
             margin: "auto",
           }}
         >
-          {/* <Box id="header-location">
-            <p>Location</p>
-            <a
-              href="https://googlemaps.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faLocationDot} className="location" />
-            </a>
-          </Box> */}
-          <Box>
-            <TextField
-              id="outlined-select-currency"
-              select
-              label="Search"
-              value={category}
-              size="small"
-              onChange={handleChange}
-            //   helperText="Please select your car category eg Mazda"
-            >
-              {categories.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Box>
-          {/* <Box sx={{ display: {xs: "none", sm: "flex"}}}> */}
+          <Box sx={{ display: "flex"}}>
           <NavLink to="/">
-            <Box id="header-logo">
+            <Box id="header-logo" sx={{ marginRight: 20}}>
               <Box
                 component="img"
                 src="/images/logo.jpg"
-                sx={{ width: "200px" }}
+                sx={{ width: "200px", display: {xs: "none", sm: "flex"} }}
               />
               {/* <img src="/images/logo.jpg" alt="" style={{ width: '100%',height:'50px' }} /> */}
             </Box>
           </NavLink>
+          <TextField id="outlined-basic" label="Search" variant="outlined" size='small' sx={{ width: {xs: "100%", sm: "10"}, marginRight: 6}}/>
+          <Box >
           <Box id="header-menu-toggler">
             <IconButton
               size="large"
@@ -207,7 +162,8 @@ const Navbar = () => {
               </Menu>
             </div>
             </Box>
-          {/* </Box> */}
+            </Box>
+          </Box>
         </Toolbar>
       </AppBar>
     </>
