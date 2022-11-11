@@ -48,25 +48,37 @@ const Navbar = () => {
       >
         <Toolbar
           sx={{
-            width: "100%",
-            maxWidth: "1400px",
+            width: "100vw",
+            maxWidth: "100vw",
             margin: "auto",
           }}
         >
-          <Box sx={{ display: "flex"}}>
-          <NavLink to="/">
-            <Box id="header-logo" sx={{ marginRight: 20}}>
+          <Box sx={{  width:"100%", display: "flex", justifyContent:"space-between"}}>
+            <Box  flex={2} >
+         
+            <Box
+                sx={{width:{xs:"35vw",sm:"20vw"}}}
+            component={NavLink}
+            to="/"
+            id="header-logo" >
               <Box
                 component="img"
                 src="/images/logo.jpg"
-                sx={{ width: "200px", display: {xs: "none", sm: "flex"} }}
+                sx={{width:{xs:"35vw",sm:"20vw"}}}
               />
+
               {/* <img src="/images/logo.jpg" alt="" style={{ width: '100%',height:'50px' }} /> */}
             </Box>
-          </NavLink>
-          <TextField id="outlined-basic" label="Search" variant="outlined" size='small' sx={{ width: {xs: "100%", sm: "10"}, marginRight: 6}}/>
-          <Box >
-          <Box id="header-menu-toggler">
+         
+          </Box>
+
+          {/*logo goes up */}
+<Box flex={2}>
+  <TextField id="outlined-basic" label="Search" variant="outlined" size='small' sx={{width:"100%", }}/>
+</Box>
+        
+          <Box flex={2}>
+          <Box  id="header-menu-toggler">
             <IconButton
               size="large"
               edge="start"
@@ -76,7 +88,8 @@ const Navbar = () => {
               <MenuIcon color="primary" />
             </IconButton>
           </Box>
-          <Box noWrap id="header-links">
+
+          <Box  noWrap id="header-links">
             <NavLink
               to="/"
               exact

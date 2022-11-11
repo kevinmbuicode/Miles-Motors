@@ -28,8 +28,9 @@ const CarDetails = () => {
     const { carImg, carName, carType, transmission, fuel, color, mileage, price, engine, description } = carDetails ? carDetails : {};
 
     useEffect(() => {
-        axios.get(`https://cars-zone-server.netlify.app/.netlify/functions/server/cars/details/${carID}`)
-            .then(({ data }) => setCarDetails(data))
+        
+        axios.get(`https://milesmotors.herokuapp.com/car/${carID}`)
+            .then(({ data }) => setCarDetails(data.data))
             .catch(err => console.log(err))
     }, [carID])
 
