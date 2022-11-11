@@ -132,10 +132,10 @@ BMW
          <option value="Toyota">
      Toyota
       </option>
-         <option value="audi">
+         <option value="Audi">
     Audi
       </option>
-<option value="subaru">
+<option value="Subaru">
   Subaru
 </option>
 <option value="mazda">
