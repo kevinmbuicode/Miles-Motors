@@ -1,5 +1,6 @@
 import { Backdrop, createTheme, ThemeProvider } from "@mui/material";
 import { Box, styled } from "@mui/system";
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Common/Navbar/Navbar";
@@ -59,6 +60,8 @@ export const PageHeading = styled('div')(({ theme }) => ({
 }));
 
 function App() {
+    const [name,setName]=React.useState("a");
+
 
 
   return (
@@ -73,7 +76,7 @@ function App() {
 
         <Router>
           <Box className="App" sx={{ position: 'relative' }}>
-            <Navbar />   {/* navigation bar */}
+            <Navbar  setName={setName} />   {/* navigation bar */}
             <Box sx={{ position: 'relative' }}>
               <Switch>
                 {/* routes */}
