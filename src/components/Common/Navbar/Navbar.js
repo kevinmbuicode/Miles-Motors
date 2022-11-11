@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navbar.css";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
@@ -8,6 +8,9 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Menu, MenuItem, TextField } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import {search} from "../../../../src/features/query.js"
+import {type} from "../../../../src/features/sort.js"
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,6 +28,10 @@ function changeHeaderOnScroll() {
 }
 
 const Navbar = () => {
+    const dispatch= useDispatch()
+      const[value, setValue]=React.useState("")
+    
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -53,8 +60,8 @@ const Navbar = () => {
             margin: "auto",
           }}
         >
-          <Box sx={{  width:"100%", display: "flex", justifyContent:"space-between"}}>
-            <Box  flex={2} >
+          <Box sx={{  width:"100%", display: "flex", justifyContent:{xs:'space-around',sm:'space-between'},marginLeft:{xs:'0',sm:'0'}}}>
+            <Box sx={{display:{xs:'none',sm:'block'}}} flex={2} >
          
             <Box
                 sx={{width:{xs:"35vw",sm:"20vw"}}}
@@ -73,10 +80,89 @@ const Navbar = () => {
           </Box>
 
           {/*logo goes up */}
-<Box flex={2}>
-  <TextField id="outlined-basic" label="Search" variant="outlined" size='small' sx={{width:"100%", }}/>
-</Box>
+<Box sx={{display:'flex',flex:{xs:6,sm:3}}}  >
+  <TextField 
+  onChange={(e)=>{
+    
+
+setValue(e.target.value)
+ 
+
+
+  
+    
+  }}
+ onKeyPress={
+  (e)=>{
+    if(e.key==="Enter"){
+ return dispatch(search({search:value}))
+    }
+  }
+ }
+ 
+  id="outlined-basic" label="Search" variant="outlined" size='small' sx={{width:"100%", }}/>
+
+  <button 
+  style={{height:"40px",width:"30px",backgroundColor:'red',border:"none",outline:"none",position:"relative",right:"20px",cursor:'pointer'}}
+
+  onClick={
+    ()=>{
+      alert(value)
+      return  dispatch(search({search:value}))
+    }
+   }>
+    
+    </button>
+    <select 
+    onChange={
+      (e)=>{
+return  dispatch(type({type:e.target.value}))
+      }
+    }
+    style={{position:'relative',right:'1vw',height:'34px',border:'none',outline:'none',marginTop:'3px',marginBottom:'2px',width:'55px'}}>
+      <option value="bmw">
+BMW
+      </option>
+      <option value="ford">
+       Ford
+      </option>
+       <option value="porsche">
+     Porsche
+      </option>
+         <option value="Toyota">
+     Toyota
+      </option>
+         <option value="audi">
+    Audi
+      </option>
+<option value="subaru">
+  Subaru
+</option>
+<option value="mazda">
+ 
+Mazda
+</option>
+<option value="nissan">
+ 
+Nissan
+</option>
+<option value="suzuki">
+
+Suzuki
+</option>
+<option>
+
+
+</option>
+
+
+      
+    </select>
         
+   
+</Box>
+
+
           <Box flex={2}>
           <Box  id="header-menu-toggler">
             <IconButton

@@ -4,20 +4,31 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import LoadingSpinner from '../Common/LoadingSpinner/LoadingSpinner';
 import SingleCar from './SingleCar/SingleCar';
+import {   useSelector} from 'react-redux'
 
 
 const CarsSection = ({ dataAmount }) => {
+      
+const {search}= useSelector((state)=>state.query)
+const {type}= useSelector((state)=>state.type)
+
     const [cars, setCars] = useState(null);
 
-    const FetchCars = async () => {
-        const {data} =  await axios.get(`https://milesmotors.herokuapp.com/cars/${dataAmount ? dataAmount : 'all'}`)
+
+    useEffect(() => {
+         const FetchCars = async () => {
+            
+        const {data} =  await axios.get(`https://milesmotors.herokuapp.com/cars/${dataAmount ? dataAmount : 'all'}`,{
+            params:{
+                name:search,
+                brand:type
+            }
+        })
         setCars(data)
         console.log("dataNumber", data)
     }
-
-    useEffect(() => {
         FetchCars()   
-    }, [dataAmount])
+    }, [dataAmount,search,type])
 
 
     return (!cars ? <LoadingSpinner style={{ padding: '100px 0' }} /> :
