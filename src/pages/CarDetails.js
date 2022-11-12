@@ -81,9 +81,10 @@ const CarDetails = () => {
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Typography variant="h4"
+                    
                         sx={{
                             fontWeight: 'medium', my: 2
-                        }} >Buy this car</Typography>
+                        }} >Car Details</Typography>
                     <TableContainer>
                         <Table>
                             <TableBody sx={{ textTransform: 'capitalize', '& th': { fontWeight: 'medium' } }}>
@@ -104,8 +105,11 @@ const CarDetails = () => {
                     </TableContainer>
                     <Box sx={{ px: 2, my: 5 }}>
                         <Button variant='outlined' fullWidth
+                        component="a"
+                        href="http://wa.me/+254733381707"
+                         
                             onClick={() => history.push(`/dashboard/pay/${carID}`)}
-                        >Buy this car</Button>
+                        >Enquire</Button>
                     </Box>
 
                 </Grid>
