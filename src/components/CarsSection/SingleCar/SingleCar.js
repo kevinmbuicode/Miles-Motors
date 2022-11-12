@@ -41,7 +41,7 @@ const SingleCar = ({ carInfo }) => {
                     <NavLink to={`/cars/details/${carID}`} style={{ textDecoration: 'none' }}
                     ><Button variant="contained" color="primary"
                         sx={{ borderRadius: '5px', px: 3.5, py: 1.3 }}
-                    >Purchase</Button></NavLink>
+                    >View More</Button></NavLink>
                 </Box>
                 <Box sx={{
                     position: 'absolute', bottom: 0, left: 0, width: '100%',

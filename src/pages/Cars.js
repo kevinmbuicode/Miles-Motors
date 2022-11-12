@@ -29,13 +29,11 @@ const Cars = () => {
                             onInit={(typewriter) => {
                                 typewriter.typeString('Your Favorite')
                                     .pauseFor(2500).deleteChars(13)
-                                    .typeString('Fastest').pauseFor(2000)
+                                    .typeString('New').pauseFor(2000)
                                     .deleteChars(7)
-                                    .typeString('Hyper').pauseFor(2000)
+                                    .typeString('Foreign').pauseFor(2000)
                                     .deleteChars(5)
-                                    .typeString('Hyper').pauseFor(2000)
-                                    .deleteChars(5).pauseFor(1500)
-                                    .typeString('Sports').pauseFor(2000)
+                                    
                                     .deleteChars(6).start()
                             }}
                         /> Cars
