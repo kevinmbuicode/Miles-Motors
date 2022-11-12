@@ -20,7 +20,7 @@ const Home = () => {
         
             {/* offers section */}
             <section>
-                <CarsSection  dataAmount={6} />
+                <CarsSection  dataAmount={50} />
                 <Box sx={{ textAlign: 'center', my: 6 }}>
                     <NavLink to="/cars"
                         style={{ textDecoration: 'none' }}>
