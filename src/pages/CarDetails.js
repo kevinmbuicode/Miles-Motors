@@ -10,6 +10,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import LoadingSpinner from '../components/Common/LoadingSpinner/LoadingSpinner';
 import { useHistory } from 'react-router-dom';
+import ImageBanner from '../components/CarsSection/ImageBanner';
 
 
 const DetailsContainer = styled(Grid)(({ theme }) => ({
@@ -25,7 +26,7 @@ const CarDetails = () => {
 
     const [carDetails, setCarDetails] = useState(null);
     // destructure car details
-    const { carImg, carName, carType, transmission, fuel, color, mileage, price, engine, description } = carDetails ? carDetails : {};
+    const {carImg,carName, carType, transmission, fuel, color, mileage, price, engine, description } = carDetails ? carDetails : {};
 
     useEffect(() => {
         
@@ -61,9 +62,14 @@ const CarDetails = () => {
                         overflow: 'hidden', borderRadius: '10px',
                         '&:hover img': { transform: 'scale(1.1)' }
                     }}>
-                        <Box component="img" src={carImg} sx={{
+                         <Box component="img" src={carImg} sx={{
                             height: '100%', transition: 'transform .5s'
                         }} />
+          
+                        {/* <Box component="img" src={carImg} sx={{
+                            height: '100%', transition: 'transform .5s'
+                        }} /> */}
+
                     </Box>
                     <Box>
                         <Typography variant="h4"
