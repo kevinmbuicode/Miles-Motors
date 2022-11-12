@@ -1,3 +1,4 @@
+//hompage banner//
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -14,48 +15,48 @@ import { autoPlay } from 'react-swipeable-views-utils';
 const bannerSlides = [
     {
         id: 1,
-        label: 'Bugatti Bolide',
-        imgPath: '/images/all-cars/bugatti-bolide.jpg',
+        label: 'Toyota Vitz',
+        imgPath: 'https://images2.imgbox.com/2d/55/N7rjTxBr_o.jpg',
     },
     {
         id: 2,
-        label: 'Lamborghini Aventador',
-        imgPath: '/images/all-cars/aventador-red.jpg',
+        label: 'Toyota landCruizer Prado TZ G',
+        imgPath: 'https://thumbs2.imgbox.com/3c/b8/nHfiWKTv_t.jpeg',
     },
     {
         id: 3,
-        label: 'Audi R8 Spyder',
-        imgPath: '/images/all-cars/audi-r8.jpg',
+        label: 'Subaru Impreza',
+        imgPath: 'https://thumbs2.imgbox.com/2f/52/mGIGzpe0_t.jpeg',
     },
     {
         id: 4,
-        label: 'Pagani Zonda',
-        imgPath: '/images/all-cars/pagani-zonda.jpg',
+        label: 'Landcruiser ZX',
+        imgPath: 'https://thumbs2.imgbox.com/10/1c/umNN73ST_t.jpeg',
     },
     {
         id: 5,
-        label: 'Mercedes-AMG GTR',
-        imgPath: '/images/all-cars/mercedes-amg.jpg',
+        label: 'Daihatsu Mira',
+        imgPath: 'https://thumbs2.imgbox.com/4a/56/b03X7iVS_t.jpg',
     },
     {
         id: 6,
-        label: 'Ferrari Enzo',
-        imgPath: '/images/all-cars/ferrari-enzo.jpg',
+        label: 'Toyota Harrier',
+        imgPath: 'https://thumbs2.imgbox.com/e2/db/A05DfOzS_t.jpg',
     },
     {
         id: 7,
-        label: 'McLaren P1',
-        imgPath: '/images/all-cars/mcLaren-p1.jpg',
+        label: 'Mitsubishi Wagon',
+        imgPath: 'https://thumbs2.imgbox.com/c1/34/8N61rgCI_t.jpg',
     },
     {
         id: 8,
-        label: 'Lamborghini Aventador',
-        imgPath: '/images/all-cars/aventador-orange.jpg',
+        label: 'Toyota Harrier',
+        imgPath: 'https://thumbs2.imgbox.com/47/6c/awwouCCV_t.jpg',
     },
     {
         id: 9,
-        label: 'Pagani Huayra',
-        imgPath: '/images/all-cars/pagani-huayra.jpg',
+        label: 'Nissan Navara',
+        imgPath: 'https://thumbs2.imgbox.com/44/f8/YGzcIplE_t.jpg',
     }
 ]
 

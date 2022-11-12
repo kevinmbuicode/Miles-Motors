@@ -1,80 +1,157 @@
-import { Box } from '@mui/system';
-import { Button, Container, FormHelperText, TextField, Typography } from '@mui/material';
-import axios from 'axios';
-import React, { useState } from 'react';
-import useAuthContext from '../others/useAuthContext';
 
+import {
+  Box,
+  Button,
+  TextareaAutosize,
+  TextField,
+  Typography,
+} from "@mui/material";
+import {React, useEffect ,useState} from "react";
+import { SendEmail } from "../utilis/Api";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Toast from '../utilis/Toast';
 const Contact = () => {
-    const { user } = useAuthContext();
-    const [values, setValues] = React.useState({
-        message: '', name: user.displayName
-    });
+  // states
+  const[FirstName,setFirstName]=useState('')
+  const[LastName,setLastName]=useState('')
+  const[email,setEmail]=useState('')
+  const[message,setMessage]=useState('')
+  const[number,setNumber]=useState('')
+  const [buttonLoading, setButtonLoading] = useState(false);
+  const [send, setSend] = useState();
 
-    const handleChange = (prop) => (event) => {
-        setValues({
-            ...values, [prop]: event.target.value
-        });
-    };
+///////////////////////////////////////
 
-    const [submissionStatus, setSubmissionStatus] = useState(null);
-    const handleSubmit = (event) => {
-        setSubmissionStatus(null);
-        const { email } = user;
-        const date = Date.now();
-        const newMessage = { ...values, email, date };
-        axios.post('https://cars-zone-server.netlify.app/.netlify/functions/server/contact', newMessage)
-            .then(({ data }) => {
-                if (data.insertedId) {
-                    setSubmissionStatus({ success: 'Message sent successfully' })
-                    setValues({ message: '', name: '' })
-                    event.target.reset()
-                } else {
-                    setSubmissionStatus({ error: 'Error sending message' })
-                }
-            })
-            .catch(err => console.log(err));
-        event.preventDefault();
+  useEffect(()=>{
+    if (send) {
+      toast.success(send.msg);
+      setFirstName("")
+      setLastName("")
+      setEmail("")
+      setNumber("")
+      setMessage("")
+      setSend()
+      
+       
+     
     }
-    return (
-        <Box>
-            <Typography variant="h4" align="center" color="primary" fontWeight="bold">Contact Us</Typography>
-            <Container maxWidth='sm' sx={{ my: 4 }}>
-                <form onSubmit={handleSubmit}>
-                    <TextField
-                        label="Name" variant="standard"
-                        fullWidth type="text" autoComplete="cc-name"
-                        value={values.name}
-                        onChange={handleChange('name')}
-                    />
-                    <TextField
-                        label="Email" variant="standard"
-                        fullWidth aria-readonly
-                        value={user.email}
-                        type="email" sx={{ my: 3 }}
-                    />
-                    <TextField
-                        label="Write Your Message"
-                        multiline fullWidth
-                        rows={5} required
-                        value={values.message}
-                        onChange={handleChange('message')}
-                    />
+},[send])   
 
-                    <Box sx={{
-                        textTransform: 'capitalize',
-                        display: 'flex', justifyContent: 'flex-end',
-                        alignItems: 'center', my: 4
-                    }}>
-                        <FormHelperText sx={{ color: 'red' }}>{submissionStatus?.error}</FormHelperText>
-                        <FormHelperText sx={{ color: 'green' }}>{submissionStatus?.success}</FormHelperText>
-                        <Button variant="contained" size="large" color="primary" type="submit" sx={{ ml: 3 }}>Send
-                        </Button>
-                    </Box>
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setButtonLoading(true);
 
-                </form>
-            </Container>
-        </Box>
+    SendEmail({ FirstName,LastName ,email,number, message, setSend }).then(
+      () => {
+        setButtonLoading(false);
+      }
     );
+  };
+
+  return (
+    <>
+    <Toast/>
+    <Box sx={{ display: "flex", justifyContent: { sm: "center" } }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          margin: { sm: 5 },
+        }}
+      >
+        <Typography variant="h4" fontSize="bold">
+          Contact Us
+        </Typography>
+        <Typography>Got any question? Send as a message below.</Typography>
+        <form onSubmit={onSubmit}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              gap: 1,
+            }}
+          >
+            <Box
+              sx={{ display: "flex", flexDirection: "column", marginTop: 2 }}
+            >
+              <label htmlFor="First name" id="FirstName">
+                First name
+              </label>
+              <TextField
+                id="FirstName"
+                placeholder="Enter your first name"
+                value={FirstName}
+                required
+                onChange={(e)=>setFirstName(e.target.value)}
+              />
+            </Box>
+            <Box
+              sx={{ display: "flex", flexDirection: "column", marginTop: 2 }}
+            >
+              <label htmlFor="Last name" id="LastName">
+                Last name
+              </label>
+              <TextField
+                id="LastName"
+                placeholder="Enter your last name"
+                value={LastName}
+                required
+                onChange={(e)=>setLastName(e.target.value)}
+              />
+            </Box>
+          </Box>
+          <Box sx={{ display: "flex", flexDirection: "column", marginTop: 2 }}>
+            <label htmlFor="email" id="email">
+              Email
+            </label>
+            <TextField
+              id="email"
+              type="email"
+              placeholder="youremail@email.com"
+              value={email}
+              required
+              onChange={(e)=>setEmail(e.target.value)}
+            />
+          </Box>
+          <Box sx={{ display: "flex", flexDirection: "column", marginTop: 2 }}>
+            <label htmlFor="number" id="number">
+              Phone Number
+            </label>
+            <TextField id="number" type="number" required value={number} onChange={(e)=>setNumber(e.target.value)}/>
+            <Box
+              sx={{ marginTop: 2, display: "flex", flexDirection: "column" }}
+            >
+              <label htmlFor="message" id="message">
+                Message
+              </label>
+              <TextareaAutosize
+                aria-label="minimum height"
+                minRows={7}
+                id="message"
+                required
+                placeholder="Send us a message and we'll reply as soon as possible.."
+                style={{ margin: 5 }}
+                value={message}
+                onChange={(e)=>setMessage(e.target.value)}
+              />
+            </Box>
+
+            <Button
+              variant="contained"
+              sx={{ width: "100%" }}
+              type="submit"
+            > {buttonLoading ? 'SENDING..' : 'SEND'}</Button>
+          </Box>
+        </form>
+        <Typography>
+          <info/>
+        </Typography>
+      </Box>
+    </Box>
+    </>
+  );
 };
 
 export default Contact;
