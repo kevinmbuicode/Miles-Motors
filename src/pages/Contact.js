@@ -80,6 +80,7 @@ const Contact = () => {
                 First name
               </label>
               <TextField
+                
                 id="FirstName"
                 placeholder="Enter your first name"
                 value={FirstName}
@@ -145,9 +146,7 @@ const Contact = () => {
             > {buttonLoading ? 'SENDING..' : 'SEND'}</Button>
           </Box>
         </form>
-        <Typography>
-          <info/>
-        </Typography>
+      
       </Box>
     </Box>
     </>
