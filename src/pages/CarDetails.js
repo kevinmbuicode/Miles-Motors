@@ -10,8 +10,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import LoadingSpinner from '../components/Common/LoadingSpinner/LoadingSpinner';
 import { useHistory } from 'react-router-dom';
-import ImageBanner from '../components/CarsSection/ImageBanner';
-
+import ImageCarousel from '../components/CarsSection/Courosel/ImageCourosel';
 
 const DetailsContainer = styled(Grid)(({ theme }) => ({
     flexDirection: 'column',
@@ -53,22 +52,22 @@ const CarDetails = () => {
     const history = useHistory();
 
     return (!carDetails ? <LoadingSpinner /> :
-        <Box sx={{ maxWidth: 'xl', mx: 'auto', py: 4, px: 1 }}>
+        <Box sx={{ maxWidth: 'xl', mx: 'auto', py: 3, px: 1 }}>
             <DetailsContainer container spacing={2}>
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12} md={7}>
                     <Box sx={{
                         height: '500px', background: '#00000011',
                         display: 'flex', justifyContent: 'center',
-                        overflow: 'hidden', borderRadius: '10px',
+                       borderRadius: '10px',
                         '&:hover img': { transform: 'scale(1.1)' }
                     }}>
-                         <Box component="img" src={carImg} sx={{
+                         {/* <Box component="img" src={carImg} sx={{
+                            height: '100%', transition: 'tracomponent="img" src={carImg} sx={{
                             height: '100%', transition: 'transform .5s'
-                        }} />
-          
-                        {/* <Box component="img" src={carImg} sx={{
-                            height: '100%', transition: 'transform .5s'
+                        }} />nsform .5s'
                         }} /> */}
+                 <ImageCarousel />
+                        {/* <Box  */}
 
                     </Box>
                     <Box>
@@ -115,6 +114,7 @@ const CarDetails = () => {
                 </Grid>
             </DetailsContainer>
         </Box>
+
     );
 };
 
