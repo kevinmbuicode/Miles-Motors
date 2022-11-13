@@ -17,6 +17,8 @@ import SocialFlow from "./components/Common/socialFlow/socialFlow";
 import LoadingSpinner from "./components/Common/LoadingSpinner/LoadingSpinner";
 import About from "./pages/About";
 import Contact from './pages/Contact';
+import AddNewCar from "./components/Dashboard/AdminParts/AddNewCar.js"
+import ManageCars from "./components/Dashboard/AdminParts/ManageCars.js"
 
 // customize mui theme
 export const theme = createTheme({
@@ -61,7 +63,7 @@ export const PageHeading = styled('div')(({ theme }) => ({
 }));
 
 function App() {
-    const [name,setName]=React.useState("a");
+
 
 
 
@@ -77,7 +79,7 @@ function App() {
 
         <Router>
           <Box className="App" sx={{ position: 'relative' }}>
-            <Navbar  setName={setName} />   {/* navigation bar */}
+            <Navbar   />   {/* navigation bar */}
             <Box sx={{ position: 'relative' }}>
               <Switch>
                 {/* routes */}
@@ -85,6 +87,9 @@ function App() {
                 <Route exact path="/cars"><Cars /></Route>
                 <Route exact path="/about"><About /></Route>
                 <Route exact path="/contact"><Contact/></Route>
+                  <Route exact path="/profile"><AddNewCar/></Route>
+                     <Route exact path="/manage"><ManageCars/></Route>
+                
                 
 
                  
