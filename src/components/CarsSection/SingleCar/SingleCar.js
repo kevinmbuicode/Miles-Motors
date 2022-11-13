@@ -31,6 +31,13 @@ const SingleCar = ({ carInfo }) => {
     price,
     engine,
   } = carInfo;
+
+
+  // Numbers over 1000 to separated by commas
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
       <NavLink to={`/cars/details/${carID}`}>
@@ -45,7 +52,7 @@ const SingleCar = ({ carInfo }) => {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div" color="red">
-                {price}
+              {numberWithCommas(price.toFixed(2))}
               </Typography>
               <Typography
                 variant="body2"

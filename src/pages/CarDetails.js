@@ -2,7 +2,7 @@ import { Button, Grid, Typography } from '@mui/material';
 import { Box, styled } from '@mui/system';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -114,7 +114,7 @@ const CarDetails = () => {
                     </Box>
                 </Grid>
             </DetailsContainer>
-            <CarsSection/>
+            <NavLink to={`/cars/details/${carID}`}><CarsSection/></NavLink>
         </Box>
     );
 };
