@@ -134,15 +134,19 @@ const Navbar = () => {
                 }}
               >
                 <option>sort</option>
-                <option value="bmw">BMW</option>
-                <option value="ford">Ford</option>
-                <option value="porsche">Porsche</option>
+                <option value="Bmw">BMW</option>
+                <option value="Ford">Ford</option>
+                <option value="Porsche">Porsche</option>
                 <option value="Toyota">Toyota</option>
                 <option value="Audi">Audi</option>
                 <option value="Subaru">Subaru</option>
-                <option value="mazda">Mazda</option>
-                <option value="nissan">Nissan</option>
-                <option value="suzuki">Suzuki</option>
+                <option value="Mazda">Mazda</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Volkswagen">Volkswagen</option>
+                  <option value="Honda">Honda</option>
+                  <option value="Mitsubishi">Mitsubishi</option>
+                
                 <option></option>
               </select>
             </Box>
@@ -226,7 +230,7 @@ const Navbar = () => {
                     onClose={handleClose}
                   >
                     <NavLink
-                      to="profile"
+                      to="/profile"
                       style={{
                         textDecoration: "none",
                         color: "inherit",
