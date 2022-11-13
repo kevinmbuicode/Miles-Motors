@@ -11,6 +11,7 @@ import TableRow from "@mui/material/TableRow";
 import LoadingSpinner from "../components/Common/LoadingSpinner/LoadingSpinner";
 import { useHistory } from "react-router-dom";
 import ImageCarousel from "../components/CarsSection/Courosel/ImageCourosel";
+import CarsSection from "../components/CarsSection/CarsSection";
 
 const DetailsContainer = styled(Grid)(({ theme }) => ({
   flexDirection: "column",
@@ -25,7 +26,6 @@ const CarDetails = () => {
   const [carDetails, setCarDetails] = useState(null);
   // destructure car details
   const {
-    carImg,
     carName,
     carType,
     transmission,
