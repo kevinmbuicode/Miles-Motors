@@ -226,7 +226,7 @@ const Navbar = () => {
                     onClose={handleClose}
                   >
                     <NavLink
-                      to="/profile"
+                      to="profile"
                       style={{
                         textDecoration: "none",
                         color: "inherit",
