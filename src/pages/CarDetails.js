@@ -11,6 +11,7 @@ import TableRow from '@mui/material/TableRow';
 import LoadingSpinner from '../components/Common/LoadingSpinner/LoadingSpinner';
 import { useHistory } from 'react-router-dom';
 import ImageBanner from '../components/CarsSection/ImageBanner';
+import CarsSection from '../components/CarsSection/CarsSection';
 
 
 const DetailsContainer = styled(Grid)(({ theme }) => ({
@@ -111,9 +112,9 @@ const CarDetails = () => {
                             onClick={() => history.push(`/dashboard/pay/${carID}`)}
                         >Enquire</Button>
                     </Box>
-
                 </Grid>
             </DetailsContainer>
+            <CarsSection/>
         </Box>
     );
 };
