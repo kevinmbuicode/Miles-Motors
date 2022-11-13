@@ -18,46 +18,19 @@ const bannerSlides = [
         label: 'Get foreign used cars ',
         imgPath: '/images/all-cars/1.jpg',
     },
+   
     {
         id: 2,
-        label: 'Toyota landCruizer Prado TZ G',
-        imgPath: 'https://thumbs2.imgbox.com/3c/b8/nHfiWKTv_t.jpeg',
-    },
-    {
-        id: 3,
-        label: 'Subaru Impreza',
-        imgPath: 'https://thumbs2.imgbox.com/2f/52/mGIGzpe0_t.jpeg',
-    },
-    {
-        id: 4,
-        label: 'Landcruiser ZX',
-        imgPath: 'https://thumbs2.imgbox.com/10/1c/umNN73ST_t.jpeg',
-    },
-    {
-        id: 5,
         label: 'Get your favourite car',
         imgPath: '/images/all-cars/2.jpg',
     },
+  
     {
-        id: 6,
-        label: 'Toyota Harrier',
-        imgPath: 'https://thumbs2.imgbox.com/e2/db/A05DfOzS_t.jpg',
-    },
-    {
-        id: 7,
+        id: 3,
         label: 'located Upperhill',
         imgPath: 'images/all-cars/3.jpg',
     },
-    {
-        id: 8,
-        label: 'Toyota Harrier',
-        imgPath: 'https://thumbs2.imgbox.com/47/6c/awwouCCV_t.jpg',
-    },
-    {
-        id: 9,
-        label: 'Nissan Navara',
-        imgPath: 'https://thumbs2.imgbox.com/44/f8/YGzcIplE_t.jpg',
-    }
+  
 ]
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
