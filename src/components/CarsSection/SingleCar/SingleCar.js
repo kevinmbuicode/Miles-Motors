@@ -1,92 +1,77 @@
-import { Button, Grid, Typography } from '@mui/material';
-import { alpha, Box, styled } from '@mui/system';
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {
+  Button,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
+import { alpha, Box, styled } from "@mui/system";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-
-const Icon = styled('i')(({ theme }) => ({
-    color: theme.palette.primary.light,
-    fontSize: '22px'
-}));
-const CarPrice = styled('h5')(({ theme }) => ({
-    background: alpha(theme.palette.primary.dark, 0.6),
-    color: 'white',
-    fontSize: '20px',
-    margin: '0 0 10px',
-    padding: '10px 20px',
-    borderRadius: '20px'
+const Icon = styled("i")(({ theme }) => ({
+  color: theme.palette.primary.light,
+  fontSize: "22px",
 }));
 
 
 const SingleCar = ({ carInfo }) => {
-    const { carID, carImg, carName, carType, transmission, fuel, color, mileage, price, engine } = carInfo;
-    return (
-        <Grid item xs={12} sm={8} md={6} lg={4}>
-            <Box sx={{
-                overflow: 'hidden', height: '500px', position: 'relative',
-                display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
-                borderRadius: '10px', '&:hover img': {
-                    transform: 'scale(1.1)'
-                }, '& .purchase-button-wrap': {
-                    position: 'absolute', inset: 0,
-                    background: '#ff000044', display: 'none', zIndex: 1,
-                    justifyContent: 'center', alignItems: 'center'
-                }, '&:hover .purchase-button-wrap': { display: 'flex' }
-            }}>
-                <Box component="img" src={carImg} sx={{
-                    minWidth: '100%', minHeight: '100%',
-                    transition: 'transform 800ms', objectFit: 'cover'
-                }} />
-                <Box className="purchase-button-wrap">
-                    <NavLink to={`/cars/details/${carID}`} style={{ textDecoration: 'none' }}
-                    ><Button variant="contained" color="primary"
-                        sx={{ borderRadius: '5px', px: 3.5, py: 1.3 }}
-                    >View More</Button></NavLink>
-                </Box>
-                <Box sx={{
-                    position: 'absolute', bottom: 0, left: 0, width: '100%',
-                    background: 'linear-gradient(#00000000,#00000077,#00000099)',
-                    color: 'white',
-                    px: 2, pt: 12, pb: 3
-                }} >
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <Typography variant="h5"
-                            sx={{ fontWeight: 'bold', textTransform: 'capitalize' }}
-                        >{carName}</Typography>
-                        <CarPrice>Kes{price}</CarPrice>
-                    </Box>
-                    <Box sx={{
-                        display: 'flex', flexWrap: 'wrap',
-                    }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center', mx: 1, mt: 1.5 }}>
-                            <Icon className="fas fa-car"></Icon>
-                            <Typography variant="p" sx={{ textTransform: 'capitalize', mx: 1 }}>{carType}</Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', mx: 1, mt: 1.5 }}>
-                            <Icon className="fas fa-tachometer-alt"></Icon>
-                            <Typography variant="p" sx={{ textTransform: 'capitalize', mx: 1 }}>{transmission}</Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', mx: 1, mt: 1.5 }}>
-                            <Icon className="fas fa-gas-pump"></Icon>
-                            <Typography variant="p" sx={{ textTransform: 'capitalize', mx: 1 }}>{fuel}</Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', mx: 1, mt: 1.5 }}>
-                            <Icon className="fas fa-palette"></Icon>
-                            <Typography variant="p" sx={{ textTransform: 'capitalize', mx: 1 }}>{color}</Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', mx: 1, mt: 1.5 }}>
-                            <Icon className="fas fa-road"></Icon>
-                            <Typography variant="p" sx={{ textTransform: 'capitalize', mx: 1 }}>{mileage}</Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', mx: 1, mt: 1.5 }}>
-                            <Icon className="fas fa-cogs"></Icon>
-                            <Typography variant="p" sx={{ textTransform: 'capitalize', mx: 1 }}>{engine}</Typography>
-                        </Box>
-                    </Box>
-                </Box>
-            </Box>
-        </Grid>
-    );
+  const {
+    carID,
+    carImg,
+    carName,
+    carType,
+    transmission,
+    fuel,
+    color,
+    mileage,
+    price,
+    engine,
+  } = carInfo;
+  return (
+    <Grid item xs={12} sm={6} md={4} lg={3}>
+      <NavLink to={`/cars/details/${carID}`}>
+        <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center"}}>
+        <Card sx={{ maxWidth: 300 }}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="140"
+              image={carImg}
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div" color="red">
+                {price}
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                fontWeight={700}
+              >
+                {carName}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                <span style={{ backgroundColor: "#EEF0F8" }}>
+                  {transmission}
+                </span>{" "}
+                | <span style={{ backgroundColor: "#EEF0F8" }}>{fuel}</span>
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary">
+              Details
+            </Button>
+          </CardActions>
+        </Card>
+        </Box>
+      </NavLink>
+    </Grid>
+  );
 };
 
 export default SingleCar;
