@@ -29,18 +29,16 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
     // add new car in database
     const handleSubmit = (event) => {
         const newCarInfo = { ...values, carType, fuel }
-        axios.post('https://cars-zone-server.netlify.app/.netlify/functions/server/cars', newCarInfo)
+        axios.post('https://milesmotors.herokuapp.com/car', newCarInfo)
             .then(({ data }) => {
-                if (data.insertedId) {
-                    setProcessStatus({
-                        success: 'New Car Added Successfully'
-                    })
+                if (data.code===1) {
+                   alert(`car added succesfully`)
                     showSnackbar()
                     event.target.reset()
                 }
             })
             .catch(err => {
-                setProcessStatus({ error: err.message })
+             alert(`there was an error`)
                 showSnackbar() // show notification popup containing status
             })
         event.preventDefault()
@@ -71,6 +69,15 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
                                     onChange={handleValueChange('color')} />
                             </Box>
                         </Grid>
+                         <Grid item xs={6} md={4}>
+                            {/* car body color */}
+                            <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                <Icon className="fas fa-palette"></Icon>
+                                <TextField fullWidth label="Unique ID"
+                                    variant="standard" required type="text"
+                                    onChange={handleValueChange('carID')} />
+                            </Box>
+                        </Grid>
                         <Grid item xs={6} md={4}>
                             {/* car type selector */}
                             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
@@ -84,8 +91,18 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
                                         <MenuItem value={'Toyota'}>Toyota</MenuItem>
                                         <MenuItem value={'Subaru'}>Subaru</MenuItem>
                                         <MenuItem value={'Audi'}>Audi</MenuItem>
-                                        <MenuItem value={'suv'}>suv</MenuItem>
-                                        <MenuItem value={'convertible'}>Convertible</MenuItem>
+                                        <MenuItem value={'Mazda'}>Mazda</MenuItem>
+                                        <MenuItem value={'Ford'}>Ford</MenuItem>
+                                           <MenuItem value={'Nissan'}>Ford</MenuItem>
+                                            <MenuItem value={'Suzuki'}>Suzuki</MenuItem>
+                                            <MenuItem value={"Volkswagen"}>Volks Wagen</MenuItem>
+                                            <MenuItem value={"Honda"}>Honda</MenuItem>
+                                             <MenuItem value={"Mitsubishi"}>Mitsubishi</MenuItem>
+                                            
+
+
+
+
                                     </Select>
                                 </FormControl>
                             </Box>
@@ -159,6 +176,42 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
                             </Box>
                         </Grid>
                         <Grid item xs={12}>
+                            {/* car image url */}
+                            <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                <Icon className="fas fa-image"></Icon>
+                                <TextField fullWidth label="Image 2 URL"
+                                    variant="standard" required type="url"
+                                    onChange={handleValueChange('image2')} />
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12}>
+                            {/* car image url */}
+                            <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                <Icon className="fas fa-image"></Icon>
+                                <TextField fullWidth label="Image 3 URL"
+                                    variant="standard" required type="url"
+                                    onChange={handleValueChange('image3')} />
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12}>
+                            {/* car image url */}
+                            <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                <Icon className="fas fa-image"></Icon>
+                                <TextField fullWidth label="Image 4 URL"
+                                    variant="standard" required type="url"
+                                    onChange={handleValueChange('image4')} />
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12}>
+                            {/* car image url */}
+                            <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                <Icon className="fas fa-image"></Icon>
+                                <TextField fullWidth label="Image 5 URL"
+                                    variant="standard" required type="url"
+                                    onChange={handleValueChange('image5')} />
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12}>
                             {/* car description textarea */}
                             <TextField fullWidth multiline
                                 rows={4} sx={{ my: 2 }}
@@ -168,7 +221,7 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
                         </Grid>
                         <Grid item xs={12} sx={{ textAlign: 'right' }}>
                             <Button type="submit" variant="outlined"
-                                disabled={user?.email === 'kariukiamschel9@gmail.com'}>Add to Database</Button>
+                                disabled={false/*user?.email === 'kariukiamschel9@gmail.com'*/}>Add to Database</Button>
                         </Grid>
 
                          <Grid item xs={12} sx={{ textAlign: 'right' }}>
