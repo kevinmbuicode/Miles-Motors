@@ -1,8 +1,9 @@
-import { Button, FormControl, Grid, InputAdornment, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
+import { Button, FormControl, Grid, InputAdornment, InputLabel, MenuItem, Select, TextField, Typography} from '@mui/material';
 import { Box, styled } from '@mui/system';
 import axios from 'axios';
 import React from 'react';
-import useAuthContext from '../../../others/useAuthContext';
+import {Link} from "react-router-dom"
+
 
 // styled component for font awesome icon
 const Icon = styled('i')(({ theme }) => ({
@@ -12,7 +13,11 @@ const Icon = styled('i')(({ theme }) => ({
 
 
 const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
-    const { user } = useAuthContext(); // get user info from user context
+   const user={
+    name:"amschel",
+    email:'kariukiamschel9@gmail.com'
+   }
+   
 
     const [values, setValues] = React.useState({}) // form values state
     const [carType, setCarType] = React.useState('') // form car type state
@@ -71,15 +76,15 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
                             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                                 <Icon className="fas fa-car"></Icon>
                                 <FormControl variant="standard" fullWidth>
-                                    <InputLabel>Car Type</InputLabel>
+                                    <InputLabel>Car Brand</InputLabel>
                                     <Select fullWidth required
                                         value={carType}
                                         onChange={(e) => setCarType(e.target.value)}
                                     >
-                                        <MenuItem value={'sport'}>Sport</MenuItem>
-                                        <MenuItem value={'sedan'}>Sedan</MenuItem>
-                                        <MenuItem value={'coupe'}>Coupe</MenuItem>
-                                        <MenuItem value={'suv'}>SUV</MenuItem>
+                                        <MenuItem value={'Toyota'}>Toyota</MenuItem>
+                                        <MenuItem value={'Subaru'}>Subaru</MenuItem>
+                                        <MenuItem value={'Audi'}>Audi</MenuItem>
+                                        <MenuItem value={'suv'}>suv</MenuItem>
                                         <MenuItem value={'convertible'}>Convertible</MenuItem>
                                     </Select>
                                 </FormControl>
@@ -130,7 +135,7 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
                                         <MenuItem value={'diesel'}>Diesel</MenuItem>
                                         <MenuItem value={'bio-diesel'}>Bio-Diesel</MenuItem>
                                         <MenuItem value={'ethanol'}>Ethanol</MenuItem>
-                                        <MenuItem value={'electric'}>Electric</MenuItem>
+                                        <MenuItem value={'petrol'}>Petrol</MenuItem>
                                     </Select>
                                 </FormControl>
                             </Box>
@@ -163,8 +168,15 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
                         </Grid>
                         <Grid item xs={12} sx={{ textAlign: 'right' }}>
                             <Button type="submit" variant="outlined"
-                                disabled={user?.email === 'demo@admin.srt'}>Add to Database</Button>
+                                disabled={user?.email === 'kariukiamschel9@gmail.com'}>Add to Database</Button>
                         </Grid>
+
+                         <Grid item xs={12} sx={{ textAlign: 'right' }}>
+                       <Typography component={Link} to="/manage">
+                        Manage All cars
+                       </Typography>
+                        </Grid>
+
                     </Grid>
                 </form>
             </Box>
