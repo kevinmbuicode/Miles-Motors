@@ -15,8 +15,8 @@ import { autoPlay } from 'react-swipeable-views-utils';
 const bannerSlides = [
     {
         id: 1,
-        label: 'Toyota Vitz',
-        imgPath: 'https://images2.imgbox.com/2d/55/N7rjTxBr_o.jpg',
+        label: 'Get foreign used cars ',
+        imgPath: '/images/all-cars/1.jpg',
     },
     {
         id: 2,
@@ -35,8 +35,8 @@ const bannerSlides = [
     },
     {
         id: 5,
-        label: 'Daihatsu Mira',
-        imgPath: 'https://thumbs2.imgbox.com/4a/56/b03X7iVS_t.jpg',
+        label: 'Get your favourite car',
+        imgPath: '/images/all-cars/2.jpg',
     },
     {
         id: 6,
@@ -45,8 +45,8 @@ const bannerSlides = [
     },
     {
         id: 7,
-        label: 'Mitsubishi Wagon',
-        imgPath: 'https://thumbs2.imgbox.com/c1/34/8N61rgCI_t.jpg',
+        label: 'located Upperhill',
+        imgPath: 'images/all-cars/3.jpg',
     },
     {
         id: 8,
