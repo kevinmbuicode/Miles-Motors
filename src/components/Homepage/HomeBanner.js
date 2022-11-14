@@ -54,7 +54,7 @@ const HomeBanner = () => {
 
 
     return (
-        <Box sx={{ position: 'relative', color: 'white' }}>
+        <Box sx={{ position: 'relative', color: 'white'}}>
             <AutoPlaySwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={activeStep}
@@ -69,10 +69,10 @@ const HomeBanner = () => {
                             <Box
                                 component="img"
                                 sx={{
-                                    height: '70vh',
+                                    height: {xs: "40vh", sm: "50vh", md: "50vh", lg: "70vh"},
                                     display: 'block',
                                     overflow: 'hidden',
-                                    width: '100%', objectFit: 'cover'
+                                    width: '100%', objectFit: {xs: "fill", md: "cover",sm:"fill"}
                                 }}
                                 src={step.imgPath}
                                 alt={step.label}
