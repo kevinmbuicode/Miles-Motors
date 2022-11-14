@@ -11,8 +11,8 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { search } from "../../../../src/features/query.js";
 import { type } from "../../../../src/features/sort.js";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 const toggleHeaderVisibility = () => {
   document.getElementById("header-links").classList.toggle("show");
@@ -80,7 +80,6 @@ const Navbar = () => {
                   sx={{ width: { xs: "35vw", sm: "20vw" } }}
                 />
 
-                {/* <img src="/images/logo.jpg" alt="" style={{ width: '100%',height:'50px' }} /> */}
               </Box>
             </Box>
 
@@ -117,7 +116,11 @@ const Navbar = () => {
                 onClick={() => {
                   return dispatch(search({ search: value }));
                 }}
-              ></button>
+              >
+
+              <FontAwesomeIcon icon={faSearch} />
+              
+              </button>
               <select
                 onChange={(e) => {
                   return dispatch(type({ type: e.target.value }));
