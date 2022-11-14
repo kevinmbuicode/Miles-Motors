@@ -1,9 +1,10 @@
-import { Button, FormControl, Grid, InputAdornment, InputLabel, MenuItem, Select, TextField, Typography} from '@mui/material';
+import { Button,Alert, FormControl, Grid, InputAdornment, InputLabel, MenuItem, Select, TextField, Typography} from '@mui/material';
 import { Box, styled } from '@mui/system';
 import axios from 'axios';
 import React from 'react';
 import {Link} from "react-router-dom"
-
+import useAuth from "../AdminParts/../../../others/useAuthContext"
+import {useHistory} from 'react-router-dom'
 
 // styled component for font awesome icon
 const Icon = styled('i')(({ theme }) => ({
@@ -13,10 +14,24 @@ const Icon = styled('i')(({ theme }) => ({
 
 
 const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
-   const user={
-    name:"amschel",
-    email:'kariukiamschel9@gmail.com'
+    const[status,setStatus]=React.useState("")
+    const[failed,setFailed]=React.useState("")
+    const history=useHistory()
+  const {currentUser,logout}=useAuth()
+  const[error,setError]=React.useState('')
+  async function handleLogout(){
+   setError('')
+   try{
+await logout()
+history.push("/login")
    }
+   catch(e){
+    setFailed(`failed to logout!`)
+   }
+
+  }
+
+ 
    
 
     const [values, setValues] = React.useState({}) // form values state
@@ -32,19 +47,23 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
         axios.post('https://milesmotors.herokuapp.com/car', newCarInfo)
             .then(({ data }) => {
                 if (data.code===1) {
-                   alert(`car added succesfully`)
+                  setStatus(`car added succesfully`)
                     showSnackbar()
                     event.target.reset()
                 }
             })
             .catch(err => {
-             alert(`there was an error`)
+          setStatus(`car not added, there was an error`)
                 showSnackbar() // show notification popup containing status
             })
         event.preventDefault()
     }
     return (
         <Box>
+            {error&& <Alert severity="error">{error}</Alert>}
+             {status && <Alert severity="success">{status}</Alert>}
+              {failed&& <Alert severity="error">{failed}</Alert>}
+                        <Typography variant="h4" align="center" color="primary" fontWeight="bold">{`User:${currentUser.email}`}</Typography>
             <Typography variant="h4" align="center" color="primary" fontWeight="bold">Add New Car In Shop</Typography>
             <Box maxWidth="sm" sx={{ my: 4, mx: 'auto' }}>
 
@@ -221,7 +240,7 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
                         </Grid>
                         <Grid item xs={12} sx={{ textAlign: 'right' }}>
                             <Button type="submit" variant="outlined"
-                                disabled={false/*user?.email === 'kariukiamschel9@gmail.com'*/}>Add to Database</Button>
+                                disabled={currentUser?.email === 'kariukiamschel9@gmail.com'}>Add to Database</Button>
                         </Grid>
 
                          <Grid item xs={12} sx={{ textAlign: 'right' }}>
@@ -229,6 +248,14 @@ const AddNewCar = ({ setProcessStatus, showSnackbar }) => {
                         Manage All cars
                        </Typography>
                         </Grid>
+                         <Grid item xs={12} sx={{ textAlign: 'right' }}>
+                       <Typography
+                       onClick={handleLogout}
+                        component={Button} >
+                       Logout
+                       </Typography>
+                        </Grid>
+
 
                     </Grid>
                 </form>

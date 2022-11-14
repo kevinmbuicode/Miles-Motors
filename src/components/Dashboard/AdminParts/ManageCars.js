@@ -10,12 +10,14 @@ import {useEffect,useState} from 'react'
 import axios from 'axios'
 import  Typography from '@mui/material/Typography';
 import Button from "@mui/material/Button"
+import Alert from "@mui/material/Alert"
 
 
 
 
 export default function ManageCars() {
     const [cars,setCars]=useState([])
+    const[success,setSuccess]=React.useState("")
     useEffect(()=>{
 const fetchCars= async ()=>{
 const {data}=await axios.get("https://milesmotors.herokuapp.com/cars/all")
@@ -25,12 +27,15 @@ fetchCars()
     },[])
     const deleteCar= async (carID)=>{
         try{
+          setSuccess("")
+
              alert(`are you sure you want to delete ${carID},this action is irreversible!`)
    await axios.delete(`https://milesmotors.herokuapp.com/car/${carID}`)
-   alert(`car with ID of ${carID} deleted`)
+   setSuccess(`success! car with id of ${carID} deleted`)
   
         }
         catch(error){
+          alert(`there was an error`)
             console.error(error)
             return null
         }
@@ -38,6 +43,7 @@ fetchCars()
     
   return (
     <TableContainer component={Paper}>
+      {success && <Alert severity='success'>{success}</Alert>}
       <Table sx={{width:'100vw',maxWidth:'100vw' }} aria-label="simple table">
         <TableHead sx={{width:"100vw"}}>
           <TableRow >
