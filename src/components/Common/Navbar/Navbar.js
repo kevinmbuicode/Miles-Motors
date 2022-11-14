@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { search } from "../../../../src/features/query.js";
 import { type } from "../../../../src/features/sort.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {} from "@fortawesome/free-solid-svg-icons";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 const toggleHeaderVisibility = () => {
   document.getElementById("header-links").classList.toggle("show");
@@ -118,7 +118,7 @@ const Navbar = () => {
                 }}
               >
 
-              <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+              <FontAwesomeIcon icon={faSearch} />
               
               </button>
               <select
