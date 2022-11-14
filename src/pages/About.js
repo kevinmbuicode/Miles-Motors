@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import React from "react";
 import AllCarsLogo from "../images/AllCarsLogo.jpg";
 import "@fontsource/roboto/300.css";
@@ -8,9 +8,10 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 const About = () => {
-  const theme = createMuiTheme({
+  const theme = createTheme({
     typography: {
       fontFamily: ["roboto"].join(","),
+      fontWeightLight:600,
     },
   });
 
@@ -19,7 +20,7 @@ const About = () => {
       <Box
         sx={{
           marginTop: 2,
-          marginLeft: 8,
+          marginLeft: 5,
           marginRight: 4,
           
         }}
