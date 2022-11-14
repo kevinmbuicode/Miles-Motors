@@ -52,7 +52,7 @@ const SingleCar = ({ carInfo }) => {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div" color="red">
-              {numberWithCommas(price.toFixed(2))}
+              {numberWithCommas(price)}
               </Typography>
               <Typography
                 variant="body2"

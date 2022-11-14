@@ -60,6 +60,11 @@ const CarDetails = () => {
 
   const history = useHistory();
 
+  // Numbers with Commas over 1000
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   return !carDetails ? (
     <LoadingSpinner />
   ) : (
@@ -123,7 +128,7 @@ const CarDetails = () => {
                   sx={{ "& *": { fontSize: "25px", fontWeight: "bold" } }}
                 >
                   <TableCell>Price</TableCell>
-                  <TableCell align="right">Ksh{price}</TableCell>
+                  <TableCell align="right">Ksh {numberWithCommas(price)}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
