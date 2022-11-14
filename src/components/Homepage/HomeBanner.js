@@ -69,7 +69,7 @@ const HomeBanner = () => {
                             <Box
                                 component="img"
                                 sx={{
-                                    height: {xs: "40vh", sm: "50vh", md: "50vh", lg: "70vh"},
+                                    height: {xs: "40vh", sm: "50vh", md: "50vh", lg: "60vh"},
                                     display: 'block',
                                     overflow: 'hidden',
                                     width: '100%', objectFit: {xs: "fill", md: "cover",sm:"fill"}
