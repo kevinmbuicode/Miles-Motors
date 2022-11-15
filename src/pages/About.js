@@ -74,19 +74,19 @@ const About = () => {
         </Typography>
         <Box>
           <ol>
-            <li>(i)  Car Sales. i.e: Brand New and Foreign Used cars.</li>
+            <li>(1)  Car Sales. i.e: Brand New and Foreign Used cars.</li>
             <li>
-              (ii) Trade-in: For those wanting to upgrade from their current used
+              (2) Trade-in: For those wanting to upgrade from their current used
               units to a newer version.
             </li>
-            <li>(iii) Importation of desired cars on behalf of customers.</li>
-            <li>(iv) Buy locally used cars for re-sale.</li>
+            <li>(3) Importation of desired cars on behalf of customers.</li>
+            <li>(4) Buy locally used cars for re-sale.</li>
             <li>
-              (v) Liaise with financial institutions, i.e: Banks & Micro Finance to
+              (5) Liaise with financial institutions, i.e: Banks & Micro Finance to
               provide car financing.
             </li>
             <li>
-              (vi) Liaise with Insurance firms to provide insurance for customers
+              (6) Liaise with Insurance firms to provide insurance for customers
               text
             </li>
           </ol>
