@@ -20,7 +20,7 @@ export default function SocialFlow() {
             <i>
               <FontAwesomeIcon icon={faFacebook} className="icon" />
             </i>
-            <span>Facebook</span>
+          
           </a>
         </li>
         <li>
@@ -32,19 +32,19 @@ export default function SocialFlow() {
             <i>
               <FontAwesomeIcon icon={faTwitter} className="icon" />
             </i>
-            <span>Twitter</span>
+            
           </a>
         </li>
         <li>
           <a
-            href="https://twitter.com/@miles_motors"
+            href="https://www.instagram.com/milesmotorsltd/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i>
               <FontAwesomeIcon icon={faInstagram} className="icon" />
             </i>
-            <span>Instagram</span>
+            
           </a>
         </li>
         <li>
@@ -56,7 +56,7 @@ export default function SocialFlow() {
             <i>
               <FontAwesomeIcon icon={faWhatsapp} className="icon" />
             </i>
-            <span>whatsapp</span>
+            
           </a>
         </li>
       </ul>

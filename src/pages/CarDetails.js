@@ -140,7 +140,7 @@ const CarDetails = () => {
               component="a"
               href="http://wa.me/+254733381707"
               target="_blank"
-              onClick={() => history.push(`/dashboard/pay/${carID}`)}
+            
             >
               Enquire
             </Button>

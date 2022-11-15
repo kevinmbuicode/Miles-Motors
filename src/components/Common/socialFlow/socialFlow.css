@@ -68,26 +68,26 @@ nav li a i{
     left: 24px;
     font-size: 15px;
 }
-ul li a span{
+/* ul li a span{
   display: none;
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
-}
-nav ul li a:hover {
+} */
+/* nav ul li a:hover {
   z-index:1;
   width: 170px;        
   border-bottom: 1px solid rgba(0,0,0,.5);
   box-shadow: 0 0 1px 1px rgba(0,0,0,.3);
-}
-ul li:hover a span{
+} */
+/* ul li:hover a span{
   padding-left: 30%;
   display: block;
   font-size: 15px;
-}
+} */
 @media only screen and  (min-width: 1200px) {
   nav{
-    margin-left:87.5%;
+    margin-left:95%;
   }
 }
 
