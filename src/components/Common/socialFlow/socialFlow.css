@@ -14,7 +14,7 @@ nav{
   width: 60px;
   font-family: 'Ubuntu',sans-serif;
   bottom: 10%;
-  margin-left:92%;
+  margin-left:85%;
   transition: all 0.3s linear;
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,.4);
   
@@ -85,9 +85,10 @@ nav li a i{
   display: block;
   font-size: 15px;
 } */
-@media only screen and  (min-width: 1200px) {
+@media only screen and  (min-width: 1200px),  (min-width: 550px) {
+ 
   nav{
-    margin-left:95%;
+    margin-left:94%;
   }
 }
 
