@@ -4,10 +4,13 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Common/Navbar/Navbar";
-
+import SignUp from "./components/Signup"
 import Cars from "./pages/Cars";
 import Home from "./pages/Home";
-
+import Login from "./components/Login"
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute"
+import Reset from './components/Reset'
+import UpdateProfile from './components/UpdateProfile'
 import CarDetails from "./pages/CarDetails";
 import Page404 from "./pages/404";
 
@@ -87,10 +90,16 @@ function App() {
                 <Route exact path="/cars"><Cars /></Route>
                 <Route exact path="/about"><About /></Route>
                 <Route exact path="/contact"><Contact/></Route>
-                  <Route exact path="/profile"><AddNewCar/></Route>
-                     <Route exact path="/manage"><ManageCars/></Route>
+
+                  
+                    
+                     <Route exact path="/register"><SignUp/></Route>
+                        <Route exact path="/login"><Login/></Route>
+                           <Route exact path="/reset"><Reset/></Route>
                 
-                
+                <PrivateRoute exact path="/profile" component={AddNewCar}/>
+                <PrivateRoute exact path="/manage" component={ManageCars}/>
+                 <PrivateRoute exact path="/update" component={UpdateProfile}/>
 
                  
 
