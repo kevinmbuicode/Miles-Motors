@@ -11,11 +11,13 @@ import axios from 'axios'
 import  Typography from '@mui/material/Typography';
 import Button from "@mui/material/Button"
 import Alert from "@mui/material/Alert"
+import useAuth from "../AdminParts/../../../others/useAuthContext"
 
 
 
 
 export default function ManageCars() {
+  const {currentUser}=useAuth()
     const [cars,setCars]=useState([])
     const[success,setSuccess]=React.useState("")
     useEffect(()=>{
@@ -70,6 +72,7 @@ fetchCars()
            
               <TableCell  sx={{width:"10vw"}}  >
                 <Typography component={Button}
+                disabled={currentUser?.email!=='kariukiamschel9@gmail.com'}
                 onClick={
                   ()=>deleteCar(carID)
                 }

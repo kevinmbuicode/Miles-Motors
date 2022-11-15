@@ -240,7 +240,7 @@ history.push("/login")
                         </Grid>
                         <Grid item xs={12} sx={{ textAlign: 'right' }}>
                             <Button type="submit" variant="outlined"
-                                disabled={currentUser?.email === 'kariukiamschel9@gmail.com'}>Add to Database</Button>
+                                disabled={currentUser?.email !== 'kariukiamschel9@gmail.com'}>Add to Database</Button>
                         </Grid>
 
                          <Grid item xs={12} sx={{ textAlign: 'right' }}>

@@ -43,8 +43,8 @@ return setError(`passwords do not match`)
     }
     Promise.all(promises).then(()=>{
         history.push("/profile")
-    }).catch(()=>{
-        setError("failed to update account")
+    }).catch((e)=>{
+        setError(`failed to update account ${e}`)
     }).finally(()=>{
         setLoading(false)
     })
@@ -123,7 +123,7 @@ return setError(`passwords do not match`)
               sx={{ mt: 3, mb: 2 }}
               disabled={loading}
             >
-              Sign Up
+            Update Profile
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
