@@ -13,8 +13,8 @@ nav{
   position: fixed;
   width: 60px;
   font-family: 'Ubuntu',sans-serif;
-  bottom: 10%;
-  margin-left:85%;
+  bottom: 15%;
+  margin-left:87%;
   transition: all 0.3s linear;
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,.4);
   
