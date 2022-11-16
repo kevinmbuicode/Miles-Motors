@@ -35,7 +35,7 @@ import "@fontsource/roboto/700.css";
 
 const About = () => {
   const theme = createTheme({
-    typography: {
+    Typography: {
       fontFamily: ["roboto"].join(","),
       fontWeightLight:600,
     },
@@ -58,21 +58,19 @@ const About = () => {
         >
           About Us
         </Typography>
-        <Typography variant="p" sx={{ fontSize: "1rem" }}>
-          Miles Motors Ltd was established in 2011. We are a Brand New & Used
-          Car Dealership that is situated along Chyulu road, behind The Kenya
+        <Box sx={{textIndent:"50px"}} >
+        <Typography variant="p" sx={{ fontSize: "1rem", lineHeight:"30px"}}>
+          <p>Miles Motors Ltd was established in 2011. We are a Brand New & Used Car Dealership that is situated along Chyulu road, behind The Kenya
           National Library in Upper-hill, Nairobi. We offer the best deal prices
           around and also keep up to our record of being Kenya's Number 1 local
-          and international car dealership. Miles Motors Ltd was established in
-          2011. We are a Brand New & Used Car Dealership that is situated along
-          Chyulu road, behind The Kenya National Library in Upper-hill, Nairobi.
-          We offer the best deal prices around and also keep up to our record of
-          being Kenya's Number 1 local and international car dealership.
+          and international car dealership</p>
+         
         </Typography>
-        <Typography variant="h5" sx={{ marginTop: 1, color: "red" }}>
+        </Box>
+        <Typography variant="h5" sx={{ marginTop: 1, color: "red",textAlign: "center" }}>
           Services Offered
         </Typography>
-        <Box>
+        <Box sx={{lineHeight:"30px"}}>
           <ol>
             <li>(1)  Car Sales. i.e: Brand New and Foreign Used cars.</li>
             <li>
@@ -91,15 +89,17 @@ const About = () => {
             </li>
           </ol>
         </Box>
-        <Typography variant="h5" color="red">
+        <Typography variant="h5" color="red" >
           Our Brands
         </Typography>
+        <Box sx={{textIndent:"30px"}}>
         <Typography variant="p" fontStyle="sans-serif">
           We stock a wide variety of brands including, but not limited to;
           Toyota, Mercedes Benz, Lexus, Nissan, Subaru, Mazda, Isuzu, Suzuki,
           Volkswagen, Range Rover, Hyundai, Mitsubishi, Volvo, Honda, BMW, Audi,
           Jeep etc.
         </Typography>
+        </Box>
         <Box>
           <img src={image1} alt="Cars_Logos" height="10%" width="70" />
           <img src={image2} alt="Cars_Logos" height="10%" width="70" />
