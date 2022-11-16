@@ -32,17 +32,15 @@ const About = () => {
         >
           About Us
         </Typography>
-        < Typography variant="p" sx={{ fontSize: "1rem" }}>
-          Miles Motors Ltd was established in 2011. We are a Brand New & Used
-          Car Dealership that is situated along Chyulu road, behind The Kenya
-          National Library in Upper-hill, Nairobi.We offer the best deal prices
+        <Box sx={{textIndent:"50px"}} >
+        {/* <Typography variant="p" sx={{ fontSize: "1rem"}}> */}
+          <Typography>Miles Motors Ltd was established in 2011. We are a Brand New & Used Car Dealership that is situated along Chyulu road, behind The Kenya
+          National Library in Upper-hill, Nairobi.</Typography>
+          <Typography>We offer the best deal prices
           around and also keep up to our record of being Kenya's Number 1 local
-          and international car dealership. Miles Motors Ltd was established in
-          2011. We are a Brand New & Used Car Dealership that is situated along
-          Chyulu road, behind The Kenya National Library in Upper-hill, Nairobi.
-          We offer the best deal prices around and also keep up to our record of
-          being Kenya's Number 1 local and international car dealership.
-        </Typography>
+          and international car dealership.</Typography> 
+        {/* </Typography> */}
+        </Box>
         <Typography variant="h5" sx={{ marginTop: 1, color: "red" }}>
           Services Offered
         </Typography>
@@ -68,12 +66,14 @@ const About = () => {
         <Typography variant="h5" color="red">
           Our Brands
         </Typography>
+        <Box sx={{textIndent:"50px"}}>
         <Typography variant="p">
           We stock a wide variety of brands including, but not limited to;
           Toyota, Mercedes Benz, Lexus, Nissan, Subaru, Mazda, Isuzu, Suzuki,
           Volkswagen, Range Rover, Hyundai, Mitsubishi, Volvo, Honda, BMW, Audi,
           Jeep etc.
         </Typography>
+        </Box>
         <Box>
           <img src={AllCarsLogo} alt="Cars_Logos" height="10%" width="100%" />
         </Box>
