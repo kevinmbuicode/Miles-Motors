@@ -32,10 +32,10 @@ const About = () => {
         >
           About Us
         </Typography>
-        <Typography variant="p" sx={{ fontSize: "1rem" }}>
+        < Typography variant="p" sx={{ fontSize: "1rem" }}>
           Miles Motors Ltd was established in 2011. We are a Brand New & Used
           Car Dealership that is situated along Chyulu road, behind The Kenya
-          National Library in Upper-hill, Nairobi. We offer the best deal prices
+          National Library in Upper-hill, Nairobi.We offer the best deal prices
           around and also keep up to our record of being Kenya's Number 1 local
           and international car dealership. Miles Motors Ltd was established in
           2011. We are a Brand New & Used Car Dealership that is situated along
