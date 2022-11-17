@@ -66,8 +66,7 @@ const About = () => {
           Car Dealership that is situated along Chyulu road, behind The Kenya
           National Library in Upper-hill, Nairobi. We offer the best deal prices
           around and also keep up to our record of being Kenya's Number 1 local
-          and international car dealership. Miles Motors Ltd was established in
-          2011.
+          and international car dealership.
         </Typography>
         </Box>
         <Typography variant="h5" sx={{ marginTop: 1, color: "red", textAlign: "center", marginBottom: 2  }}>
