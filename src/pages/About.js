@@ -48,6 +48,9 @@ const About = () => {
           marginTop: 2,
           marginLeft: 5,
           marginRight: 4,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center"
         }}
       >
         <Typography
@@ -57,18 +60,17 @@ const About = () => {
         >
           About Us
         </Typography>
+        <Box sx={{textIndent:"30px", lineHeight:"30px"}}>
         <Typography variant="p" sx={{ fontSize: "1rem" }}>
           Miles Motors Ltd was established in 2011. We are a Brand New & Used
           Car Dealership that is situated along Chyulu road, behind The Kenya
           National Library in Upper-hill, Nairobi. We offer the best deal prices
           around and also keep up to our record of being Kenya's Number 1 local
           and international car dealership. Miles Motors Ltd was established in
-          2011. We are a Brand New & Used Car Dealership that is situated along
-          Chyulu road, behind The Kenya National Library in Upper-hill, Nairobi.
-          We offer the best deal prices around and also keep up to our record of
-          being Kenya's Number 1 local and international car dealership.
+          2011.
         </Typography>
-        <Typography variant="h5" sx={{ marginTop: 1, color: "red" }}>
+        </Box>
+        <Typography variant="h5" sx={{ marginTop: 1, color: "red", textAlign: "center", marginBottom: 2  }}>
           Services Offered
         </Typography>
         <Box sx={{lineHeight:"30px"}}>
@@ -90,10 +92,10 @@ const About = () => {
             </li>
           </ol>
         </Box>
-        <Typography variant="h5" color="red">
+        <Typography variant="h5" sx={{ marginTop: 1, color: "red", textAlign: "center", marginBottom: 2  }}>
           Our Brands
         </Typography>
-        <Box sx={{textIndent:"30px"}}>
+        <Box sx={{textIndent:"30px", lineHeight:"30px"}}>
         <Typography variant="p" fontStyle="sans-serif">
           We stock a wide variety of brands including, but not limited to:
           Toyota, Mercedes Benz, Lexus, Nissan, Subaru, Mazda, Isuzu, Suzuki,
