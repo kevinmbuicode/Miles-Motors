@@ -46,11 +46,12 @@ const About = () => {
       <Box
         sx={{
           marginTop: 2,
-          marginLeft: 5,
-          marginRight: 4,
+          marginLeft: {xs: 5, sm : 10, md: 30},
+          marginRight: {xs: 5, sm : 10, md: 30},
+          // border: "1px solid black",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <Typography
@@ -69,10 +70,10 @@ const About = () => {
           and international car dealership.
         </Typography>
         </Box>
-        <Typography variant="h5" sx={{ marginTop: 1, color: "red", textAlign: "center", marginBottom: 2  }}>
+        <Typography variant="h5" sx={{ marginTop: 5, color: "red", textAlign: "center", marginBottom: 2  }}>
           Services Offered
         </Typography>
-        <Box sx={{lineHeight:"30px"}}>
+        <Box sx={{lineHeight:"30px", marginLeft: 2}}>
           <ol>
             <li>(1) Car Sales. i.e: Brand New and Foreign Used cars.</li>
             <li>
@@ -102,7 +103,7 @@ const About = () => {
           Jeep etc.
         </Typography>
         </Box>
-        <Box>
+        <Box sx={{ marginTop: 3}}>
           <img src={image1} alt="Cars_Logos" height="10%" width="70" />
           <img src={image2} alt="Cars_Logos" height="10%" width="70" />
           <img src={image3} alt="Cars_Logos" height="10%" width="70" />
