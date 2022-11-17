@@ -130,7 +130,7 @@ history.push("/login")
                             {/* car mileage input */}
                             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                                 <Icon className="fas fa-road"></Icon>
-                                <TextField fullWidth required label="Mileage"
+                                <TextField fullWidth label="Mileage"
                                     InputProps={{
                                         endAdornment: <InputAdornment position="start">km</InputAdornment>,
                                     }}
