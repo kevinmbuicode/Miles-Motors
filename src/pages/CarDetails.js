@@ -55,7 +55,7 @@ const CarDetails = () => {
     createData("transmission", transmission),
     createData("Fuel type", fuel),
     createData("engine", engine),
-    createData("mileage", `${mileage} meters`),
+    // createData("mileage", `${mileage} meters`),
   ];
 
   const history = useHistory();

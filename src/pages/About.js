@@ -46,9 +46,8 @@ const About = () => {
       <Box
         sx={{
           marginTop: 2,
-          marginLeft: {xs: 5, sm : 10, md: 30},
-          marginRight: {xs: 5, sm : 10, md: 30},
-          // border: "1px solid black",
+          marginLeft: { xs: 5, sm: 10, md: 30 },
+          marginRight: { xs: 5, sm: 10, md: 30 },
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -61,19 +60,27 @@ const About = () => {
         >
           About Us
         </Typography>
-        <Box sx={{textIndent:"30px", lineHeight:"30px"}}>
-        <Typography variant="p" sx={{ fontSize: "1rem" }}>
-          Miles Motors Ltd was established in 2011. We are a Brand New & Used
-          Car Dealership that is situated along Chyulu road, behind The Kenya
-          National Library in Upper-hill, Nairobi. We offer the best deal prices
-          around and also keep up to our record of being Kenya's Number 1 local
-          and international car dealership.
-        </Typography>
+        <Box sx={{ textIndent: "30px", lineHeight: "30px" }}>
+          <Typography variant="p" sx={{ fontSize: "1rem" }}>
+            Miles Motors Ltd was established in 2011. We are a Brand New & Used
+            Car Dealership that is situated along Chyulu road, behind The Kenya
+            National Library in Upper-hill, Nairobi. We offer the best deal
+            prices around and also keep up to our record of being Kenya's Number
+            1 local and international car dealership.
+          </Typography>
         </Box>
-        <Typography variant="h5" sx={{ marginTop: 5, color: "red", textAlign: "center", marginBottom: 2  }}>
+        <Typography
+          variant="h5"
+          sx={{
+            marginTop: 5,
+            color: "red",
+            textAlign: "center",
+            marginBottom: 2,
+          }}
+        >
           Services Offered
         </Typography>
-        <Box sx={{lineHeight:"30px", marginLeft: 2}}>
+        <Box sx={{ lineHeight: "30px", marginLeft: 2 }}>
           <ol>
             <li>(1) Car Sales. i.e: Brand New and Foreign Used cars.</li>
             <li>
@@ -92,18 +99,26 @@ const About = () => {
             </li>
           </ol>
         </Box>
-        <Typography variant="h5" sx={{ marginTop: 1, color: "red", textAlign: "center", marginBottom: 2  }}>
+        <Typography
+          variant="h5"
+          sx={{
+            marginTop: 1,
+            color: "red",
+            textAlign: "center",
+            marginBottom: 2,
+          }}
+        >
           Our Brands
         </Typography>
-        <Box sx={{textIndent:"30px", lineHeight:"30px"}}>
-        <Typography variant="p" fontStyle="sans-serif">
-          We stock a wide variety of brands including, but not limited to:
-          Toyota, Mercedes Benz, Lexus, Nissan, Subaru, Mazda, Isuzu, Suzuki,
-          Volkswagen, Range Rover, Hyundai, Mitsubishi, Volvo, Honda, BMW, Audi,
-          Jeep etc.
-        </Typography>
+        <Box sx={{ textIndent: "30px", lineHeight: "30px" }}>
+          <Typography variant="p" fontStyle="sans-serif">
+            We stock a wide variety of brands including, but not limited to:
+            Toyota, Mercedes Benz, Lexus, Nissan, Subaru, Mazda, Isuzu, Suzuki,
+            Volkswagen, Range Rover, Hyundai, Mitsubishi, Volvo, Honda, BMW,
+            Audi, Jeep etc.
+          </Typography>
         </Box>
-        <Box sx={{ marginTop: 3}}>
+        <Box sx={{ marginTop: 3 }}>
           <img src={image1} alt="Cars_Logos" height="10%" width="70" />
           <img src={image2} alt="Cars_Logos" height="10%" width="70" />
           <img src={image3} alt="Cars_Logos" height="10%" width="70" />
