@@ -147,9 +147,9 @@ const CarDetails = () => {
           </Box>
         </Grid>
       </DetailsContainer>
-      <NavLink to={`/cars/details/${carID}`}>
+     
         <CarsSection />
-      </NavLink>
+     
     </Box>
   );
 };
