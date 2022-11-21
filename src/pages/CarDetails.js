@@ -148,7 +148,7 @@ const CarDetails = () => {
         </Grid>
       </DetailsContainer>
      
-        
+       <CarsSection/>
      
     </Box>
   );
