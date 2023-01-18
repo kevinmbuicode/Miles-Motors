@@ -51,7 +51,7 @@ const ReviewSection = () => {
         // axios.get(`https://milesmotors.herokuapp.com/cars/all`)
         axios.get(`https://smartapi-lzd3.onrender.com/cars/all`)
             .then((data ) => setReviews(data))
-            console.log(reviews)
+            // console.log(reviews)
             .catch(err => console.log(err))
     }, [])
 
