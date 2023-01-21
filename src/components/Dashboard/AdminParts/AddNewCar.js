@@ -236,7 +236,7 @@ history.push("/login")
                                 <Icon className="fas fa-image"></Icon>
                                 <TextField fullWidth label="Image 6 URL"
                                     variant="standard" required type="url"
-                                    onChange={handleValueChange('image5')} />
+                                    onChange={handleValueChange('image6')} />
                             </Box>
                         </Grid>
                         <Grid item xs={12}>
@@ -245,7 +245,7 @@ history.push("/login")
                                 <Icon className="fas fa-image"></Icon>
                                 <TextField fullWidth label="Image 7 URL"
                                     variant="standard" required type="url"
-                                    onChange={handleValueChange('image5')} />
+                                    onChange={handleValueChange('image7')} />
                             </Box>
                         </Grid>
                         <Grid item xs={12}>
@@ -254,7 +254,7 @@ history.push("/login")
                                 <Icon className="fas fa-image"></Icon>
                                 <TextField fullWidth label="Image 8 URL"
                                     variant="standard" required type="url"
-                                    onChange={handleValueChange('image5')} />
+                                    onChange={handleValueChange('image8')} />
                             </Box>
                         </Grid>
                         <Grid item xs={12}>
@@ -263,7 +263,7 @@ history.push("/login")
                                 <Icon className="fas fa-image"></Icon>
                                 <TextField fullWidth label="Image 9 URL"
                                     variant="standard" required type="url"
-                                    onChange={handleValueChange('image5')} />
+                                    onChange={handleValueChange('image9')} />
                             </Box>
                         </Grid>
                         <Grid item xs={12}>
@@ -272,7 +272,7 @@ history.push("/login")
                                 <Icon className="fas fa-image"></Icon>
                                 <TextField fullWidth label="Image 10 URL"
                                     variant="standard" required type="url"
-                                    onChange={handleValueChange('image5')} />
+                                    onChange={handleValueChange('image10')} />
                             </Box>
                         </Grid>
                         <Grid item xs={12}>
