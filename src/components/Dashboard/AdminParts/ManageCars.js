@@ -22,7 +22,7 @@ export default function ManageCars() {
     const[success,setSuccess]=React.useState("")
     useEffect(()=>{
 const fetchCars= async ()=>{
-const {data}=await axios.get("https://milesmotors.herokuapp.com/cars/all")
+const {data}=await axios.get("https://milesbackend.onrender.com/cars/all")
 setCars(data)
 }
 fetchCars()
