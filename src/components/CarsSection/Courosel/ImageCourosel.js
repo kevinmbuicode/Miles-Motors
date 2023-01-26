@@ -11,11 +11,22 @@ export default function ImageCarousel() {
 
   const [carImages, setCarImages] = useState(null);
   // destructure car details
-  const { carImg, image2, image3, image4, image5 } = carImages ? carImages : {};
+  const {
+    carImg,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+    image9,
+    image10,
+  } = carImages ? carImages : {};
 
   useEffect(() => {
     axios
-      .get(`https://milesmotors.herokuapp.com/car/${carID}`)
+      .get(`https://milesbackend.onrender.com/car/${carID}`)
       .then(({ data }) => setCarImages(data.data))
       .catch((err) => console.log(err));
   }, [carID]);
@@ -24,27 +35,52 @@ export default function ImageCarousel() {
     {
       id: 1,
       src: carImg,
-      alt: "cars",
+      alt: "car",
     },
     {
       id: 2,
       src: image2,
-      alt: "cars",
+      alt: "car",
     },
     {
       id: 3,
       src: image3,
-      alt: "cars",
+      alt: "car",
     },
     {
       id: 4,
       src: image4,
-      alt: "cars",
+      alt: "car",
     },
     {
       id: 5,
       src: image5,
-      alt: "cars",
+      alt: "car",
+    },
+    {
+      id: 6,
+      src: image6,
+      alt: "car",
+    },
+    {
+      id: 7,
+      src: image7,
+      alt: "car",
+    },
+    {
+      id: 8,
+      src: image8,
+      alt: "car",
+    },
+    {
+      id: 9,
+      src: image9,
+      alt: "car",
+    },
+    {
+      id: 10,
+      src: image10,
+      alt: "car",
     },
   ];
   const carousel = useRef();
@@ -52,6 +88,7 @@ export default function ImageCarousel() {
     infinite: true,
     customPaging: function (i) {
       return (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a className="image-page">
           <img
             src={images[i].src}

@@ -39,7 +39,7 @@ const CarDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://milesmotors.herokuapp.com/car/${carID}`)
+      .get(`https://milesbackend.onrender.com/car/${carID}`)
       .then(({ data }) => setCarDetails(data.data))
       .catch((err) => console.log(err));
   }, [carID]);
@@ -128,7 +128,9 @@ const CarDetails = () => {
                   sx={{ "& *": { fontSize: "25px", fontWeight: "bold" } }}
                 >
                   <TableCell>Price</TableCell>
-                  <TableCell align="right">Ksh {numberWithCommas(price)}</TableCell>
+                  <TableCell align="right">
+                    Ksh {numberWithCommas(price)}
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -140,16 +142,14 @@ const CarDetails = () => {
               component="a"
               href="http://wa.me/+254733381707"
               target="_blank"
-            
             >
               Enquire
             </Button>
           </Box>
         </Grid>
       </DetailsContainer>
-     
-       <CarsSection/>
-     
+
+      <CarsSection />
     </Box>
   );
 };
