@@ -18,18 +18,17 @@ const {type}= useSelector((state)=>state.type)
     useEffect(() => {
          const FetchCars = async () => {
             
-        // const {data} =  await axios.get(`https://milesmotors.herokuapp.com/cars/${dataAmount ? dataAmount : 'all'}`,{
-        const {data} =  await axios.get(`https://smartapi-lzd3.onrender.com/cars/${dataAmount ? dataAmount : 'all'}`,{
+        const {data} =  await axios.get(`https://milesbackend.onrender.com/cars/${dataAmount ? dataAmount : 'all'}`,{
             params:{
                 name:search,
                 brand:type
             }
         })
         setCars(data)
-        // console.log(data)
-    }
+        }
         FetchCars()   
-    }, [dataAmount,search,type])
+    }, [dataAmount,search,type]);
+
 
 
     return (!cars ? <LoadingSpinner style={{ padding: '100px 0' }} /> :
