@@ -332,7 +332,7 @@ import {
                     fullWidth
                     label="Image 6 URL"
                     variant="standard"
-                    required
+                   
                     type="url"
                     onChange={handleValueChange("image6")}
                   />
@@ -346,7 +346,7 @@ import {
                     fullWidth
                     label="Image 7 URL"
                     variant="standard"
-                    required
+                    
                     type="url"
                     onChange={handleValueChange("image7")}
                   />
@@ -360,7 +360,7 @@ import {
                     fullWidth
                     label="Image 8 URL"
                     variant="standard"
-                    required
+                    
                     type="url"
                     onChange={handleValueChange("image8")}
                   />
@@ -374,7 +374,7 @@ import {
                     fullWidth
                     label="Image 9 URL"
                     variant="standard"
-                    required
+                    
                     type="url"
                     onChange={handleValueChange("image9")}
                   />
@@ -388,7 +388,7 @@ import {
                     fullWidth
                     label="Image 10 URL"
                     variant="standard"
-                    required
+                    
                     type="url"
                     onChange={handleValueChange("image10")}
                   />
