@@ -35,52 +35,52 @@ export default function ImageCarousel() {
     {
       id: 1,
       src: carImg,
-      alt: "car",
+      alt: "",
     },
     {
       id: 2,
       src: image2,
-      alt: "car",
+      alt: "",
     },
     {
       id: 3,
       src: image3,
-      alt: "car",
+      alt: "",
     },
     {
       id: 4,
       src: image4,
-      alt: "car",
+      alt: "",
     },
     {
       id: 5,
       src: image5,
-      alt: "car",
+      alt: "",
     },
     {
       id: 6,
       src: image6,
-      alt: "car",
+      alt: "",
     },
     {
       id: 7,
       src: image7,
-      alt: "car",
+      alt: "",
     },
     {
       id: 8,
       src: image8,
-      alt: "car",
+      alt: "",
     },
     {
       id: 9,
       src: image9,
-      alt: "car",
+      alt: "",
     },
     {
       id: 10,
       src: image10,
-      alt: "car",
+      alt: "",
     },
   ];
   const carousel = useRef();
